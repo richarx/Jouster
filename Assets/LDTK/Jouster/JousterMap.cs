@@ -25,6 +25,7 @@ namespace Map
     public enum Target
     {
         Interior,
-        Exterior
+        Exterior,
+        Joust
     }
 }

@@ -30,17 +30,16 @@ public class SceneSwapper : MonoBehaviour
         yield return new WaitUntil(() => operation.isDone);
         yield return null;
 
-        Vector3 spawnPosition = ComputeSpawnPosition(targetCity);
-        PlayerSpawner.instance.SpawnPlayer(spawnPosition);
-
-        yield break;
+        if (targetEnvironment != Target.Joust)
+        {
+            Vector3 spawnPosition = ComputeSpawnPosition(targetCity);
+            PlayerSpawner.instance.SpawnPlayer(spawnPosition);
+        }
     }
 
     private Vector3 ComputeSpawnPosition(Cities targetCity)
     {
         DoorTrigger doorTrigger = DoorsHolder.instance.GetDoor(targetCity);
-
-        Debug.Log($"DoorTrigger is null : {doorTrigger == null}");
 
         return doorTrigger != null ? doorTrigger.SpawnPosition : Vector3.zero;
     }
@@ -49,6 +48,9 @@ public class SceneSwapper : MonoBehaviour
     {
         if (targetEnvironment == Target.Exterior)
             return "WorldMap";
+
+        if (targetEnvironment == Target.Joust)
+            return "Joust";
 
         return $"{targetCity}_Interior";
     }
