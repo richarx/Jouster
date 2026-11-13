@@ -1,4 +1,5 @@
 using System;
+using BoomTools;
 using LDtkUnity;
 using Map;
 using UnityEngine;
@@ -8,6 +9,11 @@ public class DoorTrigger : MonoBehaviour
     private BoxCollider2D boxCollider2D;
     private LDtkComponentEntity componentEntity;
     private Map.Cities targetCity;
+    private Map.Target targetEnvironment;
+    private Vector3 spawnPosition;
+
+    public Cities TargetCity => targetCity;
+    public Vector3 SpawnPosition => spawnPosition;
 
     private void Start()
     {
@@ -16,8 +22,12 @@ public class DoorTrigger : MonoBehaviour
         LDtkFields lDtkFields = GetComponent<LDtkFields>();
 
         targetCity = lDtkFields.GetEnum<Cities>(nameof(Cities));
+        targetEnvironment = lDtkFields.GetEnum<Target>(nameof(Target));
+
+        spawnPosition = transform.GetChild(0).position;
 
         SetupCollider();
+        DoorsHolder.instance.RegisterNewDoor(this);
     }
 
     private void SetupCollider()
@@ -34,6 +44,7 @@ public class DoorTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log($"Trigger : {targetCity}");
+            SceneSwapper.instance.LoadScene(targetCity, targetEnvironment);
         }
     }
 }

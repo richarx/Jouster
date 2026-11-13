@@ -4,26 +4,27 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    private PlayerWorldMapMovement playerWorldMapMovement;
+    [SerializeField] private bool canRun;
+    private PlayerMovement playerMovement;
 
     private void Start()
     {
-        playerWorldMapMovement = GetComponent<PlayerWorldMapMovement>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
         string animation = ComputeCurrentAnimation();
-        string direction = ComputeDirectionFromLook(playerWorldMapMovement.LastLookDirection);
+        string direction = ComputeDirectionFromLook(playerMovement.LastLookDirection);
 
         animator.Play($"{animation}_{direction}");
     }
 
     private string ComputeCurrentAnimation()
     {
-        if (playerWorldMapMovement.isRunning)
+        if (canRun && playerMovement.isRunning)
             return "Run";
-        if (playerWorldMapMovement.isMoving)
+        if (playerMovement.isMoving)
             return "Walk";
         return "Idle";
     }

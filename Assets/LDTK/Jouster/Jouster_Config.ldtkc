@@ -13,6 +13,24 @@
     "UseParallax": true,
     "IntGridValues": [
         {
+            "_key": "IntInteriorWallsFace_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "IntInteriorWalls_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "IntInteriorGround_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
             "_key": "IntClif_1",
             "_asset": {
                 "instanceID": 0

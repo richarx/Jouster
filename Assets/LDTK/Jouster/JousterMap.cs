@@ -18,4 +18,13 @@ namespace Map
         Red,
         Purple
     }
+
+    /// <summary>
+    /// LDtk Enum for JousterMap
+    /// </summary>
+    public enum Target
+    {
+        Interior,
+        Exterior
+    }
 }

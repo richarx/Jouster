@@ -2,12 +2,14 @@ using BoomLib.Inputs;
 using BoomTools;
 using UnityEngine;
 
-public class PlayerWorldMapMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float normalizedRunThreshold;
     [SerializeField] private float groundAcceleration;
     [SerializeField] private float groundDeceleration;
+
+    public static PlayerMovement instance;
 
     private Rigidbody2D rb;
     private InputPacker imputPacker;
@@ -18,6 +20,11 @@ public class PlayerWorldMapMovement : MonoBehaviour
     public int LastLookDirection => lastLookDirection;
     public bool isMoving => currentInputs.GetMove.magnitude > 0.05f;
     public bool isRunning => Tools.NormalizeValue(moveVelocity.magnitude, 0.0f, moveSpeed) >= normalizedRunThreshold;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -53,5 +60,11 @@ public class PlayerWorldMapMovement : MonoBehaviour
 
         if (isMoving)
             lastLookDirection = Tools.GetCardinalDirection(moveInput);
+    }
+
+    public void TeleportPlayer(Vector2 spawnPosition)
+    {
+        rb.position = spawnPosition;
+        transform.position = spawnPosition.ToVector3();
     }
 }
