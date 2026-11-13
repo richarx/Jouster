@@ -1,0 +1,41 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 1,
+    "__cWid": 4,
+    "cachedPixelData": {
+      "opaqueTiles": "0000",
+      "averageColors": "9cb7abe7acd6bed6"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Wheatfield",
+    "padding": 0,
+    "pxHei": 16,
+    "pxWid": 64,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Nature/Wheatfield.png",
+    "savedSelections": [
+      {
+        "ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "mode": "Stamp"
+      }
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 57
+  }
+}

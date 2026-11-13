@@ -1,0 +1,40 @@
+{
+    "PixelsPerUnit": 16,
+    "CustomLevelPrefab": {
+        "fileID": 3160199059510431935,
+        "guid": "f378360bb1d09bb4d955fe106f3bb421",
+        "type": 3
+    },
+    "IntGridValueColorsVisible": false,
+    "UseCompositeCollider": true,
+    "GeometryType": 0,
+    "CreateBackgroundColor": true,
+    "CreateLevelBoundsTrigger": true,
+    "UseParallax": true,
+    "IntGridValues": [
+        {
+            "_key": "IntClif_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        }
+    ],
+    "Entities": [
+        {
+            "_key": "Spawn",
+            "_asset": {
+                "fileID": 475705944306747751,
+                "guid": "a40b5cfeeb321f5478d840cb83afebe1",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Door",
+            "_asset": {
+                "fileID": 2955047604777379071,
+                "guid": "cb7824a07669e0d4f853e6f714ad09d3",
+                "type": 3
+            }
+        }
+    ]
+}

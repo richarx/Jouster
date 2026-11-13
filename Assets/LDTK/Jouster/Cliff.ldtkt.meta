@@ -1,0 +1,1036 @@
+fileFormatVersion: 2
+guid: 46faaa100f4199945a50fae860abe04b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Cliff_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 6b47ac11cc906c44ab396822f9ad69af
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 049d96f088ea2e04cb1a8c762f84e94f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 33aacec5bdab88442ad91791de543840
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 6c94ebb9eeeb10749b17b0c4631c44fc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 4a1863842f68ab2458d147af0af0dc1b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 20746c7eee47b7a4a8bbb068d9201e26
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 7e227841fc1d41947a35288ad4ec5f95
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 084ae7f08fe5b7c449332d8ee45486d2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 535f06808ac8c78468e0381f4a84d22c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 112
+      width: 16
+      height: 16
+    spriteID: ce9aac74d7d56a74caeddd1a2860a6cd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 11b1962cbb958f14da7cd4deb596d9fb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 112
+      width: 16
+      height: 16
+    spriteID: de1d14f0b82ced944ae906df8b1a9a04
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 112
+      width: 16
+      height: 16
+    spriteID: a35c995dcb6d4d1489dbafc6f3aed4c9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 112
+      width: 16
+      height: 16
+    spriteID: be487c5cc12ee75488eb3f7096e28537
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 402298659543476498db7f7083625c6f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 171fad58be9ae584ebbabe604fc58aef
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 16
+      height: 16
+    spriteID: cab50a8d826eb034793ffa770cfecd7c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 96
+      width: 16
+      height: 16
+    spriteID: b74505c5e67ecb04eb8abaa69aa9a6c0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 16
+      height: 16
+    spriteID: abf95d90eff11f1428c87c2595cd6938
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 7111d1a31e23d224e82164b3e598575a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 16
+      height: 16
+    spriteID: f15d10123b87f7b49947f2cbe14955f9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 8518d1f80cb39644d901a185201a3ffe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 95a31002db8bab6478d77eef0b2fc712
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 5902d83f520cac841a1ff5b9092b0a22
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 962e0e473ae62fc428ec32132e0e43e3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 80
+      width: 16
+      height: 16
+    spriteID: cd65ccfc08ab6474d89ac39e128606cd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 356bed62706b5b247b5434db5499b50c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 020394f8a4ef7c244927d79346b39e18
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 7b37a0e72de96024887933e0bac3101e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 64
+      width: 16
+      height: 16
+    spriteID: ad051c6d32c9ab448a3948d23a96bbbe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 16
+      height: 16
+    spriteID: ffaa5142a9925184c90ba8f1259f344f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 018669d60fada974b8764c1843b59bf0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 564065dcac2eef4439ca51e47b48738e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 64
+      width: 16
+      height: 16
+    spriteID: fb2ee3e8a21b9bb4d9969a4df6ee739a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 276cffafeaff3ab4294b9ed8db127efc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 5c5285e235c6b4f40817b67bfff92db9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 07fa8cf75ab35ed4bbd37ca3ba6a3d4f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 38d7656cddf8dbe458407ae0c98309e7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 48
+      width: 16
+      height: 16
+    spriteID: e7f1339d851662044812e1e8fc8cd6f5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 0f1bd6b4880a1aa4e9b1c9c5cd88f8de
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 48
+      width: 16
+      height: 16
+    spriteID: c7f5f67f6b5942249a6e0d28f2e14e9e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 9ca064d541a8c8f49b8964a6a0de33b0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 7cb0f9a0290c9ba4b886b341bb4fa824
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 0}
+      - {x: 3, y: 0}
+      - {x: -2, y: -5}
+      - {x: -3, y: -8}
+      - {x: 8, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 672dc06efd72e75469f34513a8099e8f
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 1}
+      - {x: -8, y: 1}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 4e363a691dbb3ce4d8bbed4ef1f14c6b
+    spriteOutline:
+    - shape:
+      - {x: 0, y: -2}
+      - {x: -4, y: 0}
+      - {x: -8, y: 0}
+      - {x: -8, y: -8}
+      - {x: 3, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 023ec3e5a70c1e2489bd4e8fdf4f7ffd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 6dc830712b52c6749a2840e9389e7301
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 32
+      width: 16
+      height: 16
+    spriteID: f351841032cfddd43bd49128144ae5b1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 3bcf9d37926de7a45873693a78e6957d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: d66fa55645b2d1e40bacbb69233c3588
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -3, y: 8}
+      - {x: -4, y: 7}
+      - {x: -4, y: -8}
+      - {x: 8, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_50
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 16
+      width: 16
+      height: 16
+    spriteID: b49157a6747dc79449296b158c71073d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_51
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 16
+      width: 16
+      height: 16
+    spriteID: b06b7f88c55b918429ce8690012adaaf
+    spriteOutline:
+    - shape:
+      - {x: 4, y: -6}
+      - {x: 4, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 3, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_52
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 0e3e2e40e3083754a9d6c456e2ce7bad
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -5, y: 8}
+      - {x: -8, y: 1}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_53
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 16
+      width: 16
+      height: 16
+    spriteID: ceeb89bd8fe870b458f767013a0cd6e7
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 0}
+      - {x: 5, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_54
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 16
+      width: 16
+      height: 16
+    spriteID: a41222ac42857184a80ee7abbcd035aa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_55
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 16
+      width: 16
+      height: 16
+    spriteID: dd585edad5b1f4d45817ee129f0b815f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_56
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 2cbb069b54a7bf244a0f4e2fb9150b83
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -3, y: 8}
+      - {x: -4, y: 7}
+      - {x: -4, y: -3}
+      - {x: 0, y: -4}
+      - {x: 8, y: -4}
+    tessellationDetail: 0
+  - name: Cliff_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 11c68417001e1b04cb4aff1dc9f1e197
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -4}
+      - {x: 8, y: -3}
+      - {x: 8, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -3}
+      - {x: -7, y: -5}
+      - {x: 5, y: -5}
+    tessellationDetail: 0
+  - name: Cliff_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: b0dd6671c1b72044c954cf6959ca43a1
+    spriteOutline:
+    - shape:
+      - {x: 4, y: -1}
+      - {x: 4, y: 7}
+      - {x: 3, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -4}
+      - {x: 2, y: -4}
+    tessellationDetail: 0
+  - name: Cliff_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 1783fc58a9c236a4ba338626ca8e569a
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -4}
+      - {x: -3, y: -8}
+      - {x: 8, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 40339b935cf97b847ba595bd816720fc
+    spriteOutline:
+    - shape:
+      - {x: 8, y: -3}
+      - {x: 8, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 4, y: -8}
+    tessellationDetail: 0
+  - name: Cliff_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 2abff3ed6d54d3e459adcdcdbd23d6ab
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Cliff_62
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 780ccb2ed4d3c684e9aed2225a64e278
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: 46faaa100f4199945a50fae860abe04b, type: 3}

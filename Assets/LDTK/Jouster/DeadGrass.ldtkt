@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 2,
+    "__cWid": 3,
+    "cachedPixelData": {
+      "opaqueTiles": "111111",
+      "averageColors": "fbb7fbb7fbb7fbb8fbb8fbb8"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "DeadGrass",
+    "padding": 0,
+    "pxHei": 32,
+    "pxWid": 48,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Ground/DeadGrass.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 3
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 6,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000000000000000000",
+      "averageColors": "ea77ea77ea77ea77ea99ea99ea99ea99ea99ea99ea99ea99ea77ea77ea77ea77ea99ea99ea89ea89ea99ea99ea99ea99"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "RedKeep",
+    "padding": 0,
+    "pxHei": 64,
+    "pxWid": 96,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Buildings/Red/RedKeep.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 54
+  }
+}

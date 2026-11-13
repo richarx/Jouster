@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 6,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000000000000000000",
+      "averageColors": "e979e979e979e979ea99ea99ea9aea9aea9aea9aea9aea9ae979e979e979e979ea99ea99ea99ea99ea9aea9aea9aea9a"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "PurpleKeep",
+    "padding": 0,
+    "pxHei": 64,
+    "pxWid": 96,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Buildings/Purple/PurpleKeep.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 64
+  }
+}

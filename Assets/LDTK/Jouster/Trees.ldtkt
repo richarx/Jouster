@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 1,
+    "__cWid": 4,
+    "cachedPixelData": {
+      "opaqueTiles": "0000",
+      "averageColors": "2a8578b578b598b6"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Trees",
+    "padding": 0,
+    "pxHei": 16,
+    "pxWid": 64,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Nature/Trees.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 56
+  }
+}

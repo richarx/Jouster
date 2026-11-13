@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 3,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000000",
+      "averageColors": "e974e974e974ea54ea54ea54ea65e965e965e966e966e966"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "RedHouses",
+    "padding": 0,
+    "pxHei": 64,
+    "pxWid": 48,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Buildings/Red/RedHouses.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 52
+  }
+}

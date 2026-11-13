@@ -1,0 +1,96 @@
+fileFormatVersion: 2
+guid: f508ba91020bd68449e4a191ee1d741f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Trees_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: bc4fcdf89ce50bd4a960dc524fc9e539
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 0}
+      - {x: -4, y: 0}
+      - {x: -4, y: -7}
+      - {x: 2, y: -7}
+    tessellationDetail: 0
+  - name: Trees_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 11c72d30811a3b24da1bd48e2bb57c18
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 0}
+      - {x: -4, y: 0}
+      - {x: -4, y: -7}
+      - {x: 2, y: -7}
+    tessellationDetail: 0
+  - name: Trees_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: ed9157ea6e7f7cc4c8a49f469575eb18
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 0}
+      - {x: -4, y: 0}
+      - {x: -4, y: -7}
+      - {x: 2, y: -7}
+    tessellationDetail: 0
+  - name: Trees_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 391f9e39e52b227459e5c48d36636f5f
+    spriteOutline:
+    - shape:
+      - {x: 2, y: 0}
+      - {x: -4, y: 0}
+      - {x: -4, y: -7}
+      - {x: 2, y: -7}
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: f508ba91020bd68449e4a191ee1d741f, type: 3}

@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: 8b1eb538b4830724984cc1e309fca40b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: RedHouses_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 857ce99acb577f4449dc2908b576d66b
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 156a83c4aa57b87438248d6a0eed163f
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 48
+      width: 16
+      height: 16
+    spriteID: f984f57320c6f824ca7879129beafeda
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 16
+      height: 16
+    spriteID: cea53635983d54b44995538cbcd505c3
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 01568d67444991641aeade49659f9008
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 16
+      height: 16
+    spriteID: f146bf54e3aaae349bda2ca3bffe6219
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: f841e25515bbfb94e80040107d59fd73
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 58d3cc512c49bd040977da391e6bf265
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 46fd6096fac2a7c489defb258f214c12
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: adb2de85ed684b4469112853511eaf88
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: ee34adc09aa5a6043af03f747533c709
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  - name: RedHouses_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 9b6e4e8eff23fa147b7a9684ed09c032
+    spriteOutline:
+    - shape:
+      - {x: 7, y: -2}
+      - {x: -7, y: -2}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: 8b1eb538b4830724984cc1e309fca40b, type: 3}

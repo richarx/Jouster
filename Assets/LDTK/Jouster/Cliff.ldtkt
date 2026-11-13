@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 9,
+    "__cWid": 7,
+    "cachedPixelData": {
+      "opaqueTiles": "000000001000000000000000000001000000000000000000001000000000000",
+      "averageColors": "5ab88bc74ab8daa9d9a700000000dbb9fac5dab8eaa8eaa800000000caa9eaa9caa9eac7eac74bca3bca5bb98bc74ab8fab7fab7baa9aaa9dbb9fbd5dbb8ebc7ebc78aa98aa9caa9eaa9caa9fbc7fbc7baa97aa94bb68cc64bb60000000000000000bbb6fbd5bbb6ebc6ebc68ca78ca78b96bba68b96ebb6ebb6bba77ba7"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Cliff",
+    "padding": 0,
+    "pxHei": 144,
+    "pxWid": 112,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Ground/Cliff.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 6
+  }
+}

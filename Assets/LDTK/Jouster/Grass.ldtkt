@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 1,
+    "__cWid": 5,
+    "cachedPixelData": {
+      "opaqueTiles": "11111",
+      "averageColors": "f5bbfbd5fac5fdc8fdc8"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Grass",
+    "padding": 0,
+    "pxHei": 16,
+    "pxWid": 80,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Ground/Grass.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 5
+  }
+}

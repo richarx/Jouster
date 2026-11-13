@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 1,
+    "__cWid": 5,
+    "cachedPixelData": {
+      "opaqueTiles": "11111",
+      "averageColors": "fec9facaf7bbf5bbf4aa"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Shore",
+    "padding": 0,
+    "pxHei": 16,
+    "pxWid": 80,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/Ground/Shore.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 4
+  }
+}
