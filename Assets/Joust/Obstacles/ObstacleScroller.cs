@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class ObstacleScroller : MonoBehaviour
 {
+    [SerializeField] private JoustPlayerHealth playerHealth;
+
+    [Space]
     [SerializeField] private Transform damageLine;
     [SerializeField] private Transform destroyLine;
 
@@ -30,7 +33,7 @@ public class ObstacleScroller : MonoBehaviour
                 Destroy(child.gameObject);
                 continue;
             }
-            else if (!obstacle.hasDealtDamage && child.position.z <= damagePosition)
+            else if (!obstacle.hasDealtDamage && child.position.y <= damagePosition)
             {
                 TryDealDamageToPlayer(obstacle);
                 obstacle.hasDealtDamage = true;
@@ -44,7 +47,7 @@ public class ObstacleScroller : MonoBehaviour
     {
         if (joustPlayer.CurrentLaneIndex == obstacle.assignedLane)
         {
-            //Debug.Log("Player was hit !");
+            playerHealth.TakeDamage();
         }
     }
 }
