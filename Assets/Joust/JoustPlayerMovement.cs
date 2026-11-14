@@ -66,7 +66,7 @@ public class JoustPlayerMovement : MonoBehaviour
         if (isMoving)
         {
             PerformForwardMovement();
-            Odometer.instance.SetPlayerSpeed(velocity);
+            Odometer.instance.SetPlayerSpeed(velocity, maxSpeed);
         }
 
         PerformSideMovement();

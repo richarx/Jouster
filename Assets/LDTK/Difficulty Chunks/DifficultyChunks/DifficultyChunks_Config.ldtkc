@@ -1,0 +1,41 @@
+{
+    "PixelsPerUnit": 16,
+    "CustomLevelPrefab": {
+        "fileID": 8657149346469481086,
+        "guid": "0d3b0852f6766d04aa381339f2f7792c",
+        "type": 3
+    },
+    "IntGridValueColorsVisible": false,
+    "UseCompositeCollider": true,
+    "GeometryType": 0,
+    "CreateBackgroundColor": true,
+    "CreateLevelBoundsTrigger": false,
+    "UseParallax": true,
+    "IntGridValues": [],
+    "Entities": [
+        {
+            "_key": "Short",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "Tall",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "Tall_X2",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "Short_X3",
+            "_asset": {
+                "instanceID": 0
+            }
+        }
+    ]
+}

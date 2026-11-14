@@ -1148,7 +1148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd58d77f8f5b744eb7ff61397a887fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
-  spawnDistance: 30
+  spawnDistance: 60
+  baseSpeed: 10
+  distanceBetweenObstacleFactor: 3
   obstacles: []
 --- !u!4 &1791340173
 Transform:

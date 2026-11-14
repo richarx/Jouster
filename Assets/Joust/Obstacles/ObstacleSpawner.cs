@@ -6,46 +6,97 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private float spawnDistance;
-
-    private JoustPlayerMovement playerMovement;
-
-    private float lastSpawnTimestamp = -1.0f;
-
-    [HideInInspector] public List<Obstacle> obstacles = new List<Obstacle>();
-
-    private Vector3 centerPosition => Vector3.zero + Vector3.up * spawnDistance;
+    [SerializeField] private float distanceBetweenObstacleFactor;
 
     private JoustDifficultyData joustDifficultyData;
 
-    private void Start()
-    {
-        playerMovement = JoustPlayerMovement.instance;
-        playerMovement.OnStartRun.AddListener(() => lastSpawnTimestamp = Time.time);
-    }
+    private Vector3 centerPosition => Vector3.zero + Vector3.up * spawnDistance;
+
+    [HideInInspector] public List<Obstacle> obstacles = new List<Obstacle>();
+
+    private Chunk currentChunk;
+    private int chunkSpawnedCount;
+    private float currentDistanceInChunk;
+    private float scaledChunkDistance;
+    private float currentScaleBonus;
 
     public void Setup(JoustDifficultyData data)
     {
         joustDifficultyData = data;
+        SpawnFirstChunk();
     }
 
     private void LateUpdate()
     {
-        if (lastSpawnTimestamp < 0.0f)
-            return;
+        currentDistanceInChunk += Odometer.instance.CurrentMovement;
 
-        if (Time.time - lastSpawnTimestamp >= joustDifficultyData.minTimeBetweenSpawn)
+        if (currentChunk == null || currentDistanceInChunk >= scaledChunkDistance)
+            SelectNewChunk();
+
+        if (!currentChunk.IsEmpty)
+            CheckChunkForSpawn();
+    }
+
+    private void SpawnFirstChunk()
+    {
+    }
+
+    private void SelectNewChunk()
+    {
+        bool isLateGame = chunkSpawnedCount > 3;
+
+        if (isLateGame)
+            currentChunk = new Chunk(joustDifficultyData.lateChunks.GetRandomElements().First());
+        else
+            currentChunk = new Chunk(joustDifficultyData.earlyChunks.GetRandomElements().First());
+
+        chunkSpawnedCount += 1;
+        currentScaleBonus = Mathf.Max(1, Odometer.instance.CurrentVelocity / currentChunk.ChunkBaseSpeed) * distanceBetweenObstacleFactor;
+        scaledChunkDistance = (currentChunk.ChunkDistance + 1) * currentScaleBonus;
+        currentDistanceInChunk = 0.0f;
+    }
+
+    private void CheckChunkForSpawn()
+    {
+        for (int i = currentChunk.ObstacleInChunks.Count - 1; i >= 0; i--)
         {
-            SpawnRandomObstacle();
-            lastSpawnTimestamp = Time.time;
+            ObstacleInCHunk obstacle = currentChunk.ObstacleInChunks[i];
+
+            float relativeDistance = obstacle.distance * currentScaleBonus;
+
+            if (relativeDistance <= currentDistanceInChunk)
+            {
+                SpawnObstacle(obstacle);
+                currentChunk.RemoveAt(i);
+            }
         }
     }
 
-    private void SpawnRandomObstacle()
+    private void SpawnObstacle(ObstacleInCHunk obstacle)
     {
-        GameObject prefab = joustDifficultyData.ObstaclesPrefab.GetRandomElements<GameObject>().First();
-        int laneIndex = ComputeLane();
-        GameObject item = Instantiate(prefab, ComputePosition(laneIndex), Quaternion.identity, transform);
+        switch (obstacle.obstacleType)
+        {
+            case ObstacleType.Short:
+                CreateObstacle(joustDifficultyData.ShortObstacles.GetRandomElements().First(), obstacle.laneIndex);
+                break;
+            case ObstacleType.Tall:
+                CreateObstacle(joustDifficultyData.TallObstacles.GetRandomElements().First(), obstacle.laneIndex);
+                break;
+            case ObstacleType.TallX2:
+                CreateObstacle(joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
+                CreateObstacle(joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 1);
+                break;
+            case ObstacleType.ShortX3:
+                CreateObstacle(joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
+                CreateObstacle(joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 1);
+                CreateObstacle(joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 2);
+                break;
+        }
+    }
 
+    private void CreateObstacle(GameObject prefab, int laneIndex)
+    {
+        GameObject item = Instantiate(prefab, ComputePosition(laneIndex), Quaternion.identity, transform);
         obstacles.Add(new Obstacle(item.transform, laneIndex));
     }
 
@@ -56,10 +107,5 @@ public class ObstacleSpawner : MonoBehaviour
         float distanceLaneToLane = 1.9f;
         float distanceDelta = indexDelta * distanceLaneToLane;
         return centerPosition + Vector3.right * distanceDelta;
-    }
-
-    private int ComputeLane()
-    {
-        return Random.Range(0, joustDifficultyData.laneCount);
     }
 }
