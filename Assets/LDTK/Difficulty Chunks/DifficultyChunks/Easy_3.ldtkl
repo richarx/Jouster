@@ -26,7 +26,7 @@
 	"__smartColor": "#ADADB5",
 	"__bgPos": null,
 	"externalRelPath": null,
-	"fieldInstances": [{ "__identifier": "BaseSpeed", "__type": "Float", "__value": 15, "__tile": null, "defUid": 16, "realEditorValues": [{ "id": "V_Float", "params": [15] }] }],
+	"fieldInstances": [{ "__identifier": "BaseSpeed", "__type": "Float", "__value": 10, "__tile": null, "defUid": 16, "realEditorValues": [{ "id": "V_Float", "params": [10] }] }],
 	"layerInstances": [
 		{
 			"__identifier": "Obstacles",
@@ -52,22 +52,6 @@
 			"overrideTilesetUid": null,
 			"gridTiles": [],
 			"entityInstances": [
-				{
-					"__identifier": "Short",
-					"__grid": [1,17],
-					"__pivot": [0,0],
-					"__tags": [],
-					"__tile": { "tilesetUid": 1, "x": 0, "y": 0, "w": 16, "h": 16 },
-					"__smartColor": "#BE4A2F",
-					"iid": "f0069e00-bde0-11f1-804b-7d3a4fa1b53d",
-					"width": 16,
-					"height": 16,
-					"defUid": 2,
-					"px": [16,272],
-					"fieldInstances": [{ "__identifier": "ObstacleType", "__type": "LocalEnum.ObstacleType", "__value": "Short", "__tile": null, "defUid": 9, "realEditorValues": [] }],
-					"__worldX": 432,
-					"__worldY": 272
-				},
 				{
 					"__identifier": "Short",
 					"__grid": [0,14],
@@ -99,22 +83,6 @@
 					"fieldInstances": [{ "__identifier": "ObstacleType", "__type": "LocalEnum.ObstacleType", "__value": "Short", "__tile": null, "defUid": 9, "realEditorValues": [] }],
 					"__worldX": 448,
 					"__worldY": 224
-				},
-				{
-					"__identifier": "Short",
-					"__grid": [1,11],
-					"__pivot": [0,0],
-					"__tags": [],
-					"__tile": { "tilesetUid": 1, "x": 0, "y": 0, "w": 16, "h": 16 },
-					"__smartColor": "#BE4A2F",
-					"iid": "645a95e0-bde0-11f1-804b-c71637e7e4a2",
-					"width": 16,
-					"height": 16,
-					"defUid": 2,
-					"px": [16,176],
-					"fieldInstances": [{ "__identifier": "ObstacleType", "__type": "LocalEnum.ObstacleType", "__value": "Short", "__tile": null, "defUid": 9, "realEditorValues": [] }],
-					"__worldX": 432,
-					"__worldY": 176
 				},
 				{
 					"__identifier": "Short",
@@ -150,22 +118,6 @@
 				},
 				{
 					"__identifier": "Short",
-					"__grid": [1,5],
-					"__pivot": [0,0],
-					"__tags": [],
-					"__tile": { "tilesetUid": 1, "x": 0, "y": 0, "w": 16, "h": 16 },
-					"__smartColor": "#BE4A2F",
-					"iid": "66943230-bde0-11f1-804b-2f545d035f60",
-					"width": 16,
-					"height": 16,
-					"defUid": 2,
-					"px": [16,80],
-					"fieldInstances": [{ "__identifier": "ObstacleType", "__type": "LocalEnum.ObstacleType", "__value": "Short", "__tile": null, "defUid": 9, "realEditorValues": [] }],
-					"__worldX": 432,
-					"__worldY": 80
-				},
-				{
-					"__identifier": "Short",
 					"__grid": [0,2],
 					"__pivot": [0,0],
 					"__tags": [],
@@ -195,6 +147,54 @@
 					"fieldInstances": [{ "__identifier": "ObstacleType", "__type": "LocalEnum.ObstacleType", "__value": "Short", "__tile": null, "defUid": 9, "realEditorValues": [] }],
 					"__worldX": 448,
 					"__worldY": 32
+				},
+				{
+					"__identifier": "Tall",
+					"__grid": [1,17],
+					"__pivot": [0,0],
+					"__tags": [],
+					"__tile": { "tilesetUid": 4, "x": 0, "y": 0, "w": 16, "h": 16 },
+					"__smartColor": "#D77643",
+					"iid": "5efb9980-bde0-11f1-804b-9570e156e5d5",
+					"width": 16,
+					"height": 16,
+					"defUid": 5,
+					"px": [16,272],
+					"fieldInstances": [{ "__identifier": "ObstacleType", "__type": "LocalEnum.ObstacleType", "__value": "Tall", "__tile": null, "defUid": 10, "realEditorValues": [] }],
+					"__worldX": 432,
+					"__worldY": 272
+				},
+				{
+					"__identifier": "Tall",
+					"__grid": [1,11],
+					"__pivot": [0,0],
+					"__tags": [],
+					"__tile": { "tilesetUid": 4, "x": 0, "y": 0, "w": 16, "h": 16 },
+					"__smartColor": "#D77643",
+					"iid": "5f8a1de0-bde0-11f1-804b-b19f03237567",
+					"width": 16,
+					"height": 16,
+					"defUid": 5,
+					"px": [16,176],
+					"fieldInstances": [{ "__identifier": "ObstacleType", "__type": "LocalEnum.ObstacleType", "__value": "Tall", "__tile": null, "defUid": 10, "realEditorValues": [] }],
+					"__worldX": 432,
+					"__worldY": 176
+				},
+				{
+					"__identifier": "Tall",
+					"__grid": [1,5],
+					"__pivot": [0,0],
+					"__tags": [],
+					"__tile": { "tilesetUid": 4, "x": 0, "y": 0, "w": 16, "h": 16 },
+					"__smartColor": "#D77643",
+					"iid": "610a2e30-bde0-11f1-804b-2fd0997f173b",
+					"width": 16,
+					"height": 16,
+					"defUid": 5,
+					"px": [16,80],
+					"fieldInstances": [{ "__identifier": "ObstacleType", "__type": "LocalEnum.ObstacleType", "__value": "Tall", "__tile": null, "defUid": 10, "realEditorValues": [] }],
+					"__worldX": 432,
+					"__worldY": 80
 				}
 			]
 		}

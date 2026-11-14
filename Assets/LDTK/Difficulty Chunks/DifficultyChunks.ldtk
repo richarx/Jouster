@@ -533,7 +533,7 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "DifficultyChunks/Easy_3.ldtkl",
-			"fieldInstances": [{ "__identifier": "BaseSpeed", "__type": "Float", "__value": 15, "__tile": null, "defUid": 16, "realEditorValues": [{ "id": "V_Float", "params": [15] }] }],
+			"fieldInstances": [{ "__identifier": "BaseSpeed", "__type": "Float", "__value": 10, "__tile": null, "defUid": 16, "realEditorValues": [{ "id": "V_Float", "params": [10] }] }],
 			"layerInstances": null,
 			"__neighbours": []
 		}

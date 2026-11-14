@@ -20,9 +20,9 @@ MonoBehaviour:
   shortObstacles:
   - {fileID: 6949443193113980889, guid: b1990985304b8e541920bbc20b2ba940, type: 3}
   tallObstacles:
-  - {fileID: 6949443193113980889, guid: b1990985304b8e541920bbc20b2ba940, type: 3}
+  - {fileID: 6949443193113980889, guid: bee11e5891891de48bd11d3fe267811e, type: 3}
   tall_X2_Obstacles:
-  - {fileID: 6949443193113980889, guid: b1990985304b8e541920bbc20b2ba940, type: 3}
+  - {fileID: 6949443193113980889, guid: bee11e5891891de48bd11d3fe267811e, type: 3}
   short_X3_Obstacles:
   - {fileID: 6949443193113980889, guid: b1990985304b8e541920bbc20b2ba940, type: 3}
   minTimeBetweenSpawn: 0.5

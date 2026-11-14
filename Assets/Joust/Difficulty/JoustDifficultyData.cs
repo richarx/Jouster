@@ -22,7 +22,7 @@ public class JoustDifficultyData : ScriptableObject
     public ReadOnlyCollection<GameObject> Tall_X2_Obstacles => tall_X2_Obstacles.AsReadOnly();
     public ReadOnlyCollection<GameObject> Short_X3_Obstacles => short_X3_Obstacles.AsReadOnly();
 
-    public float minTimeBetweenSpawn;
+    [Space]
     public int laneCount;
     public float totalDistance;
 }
