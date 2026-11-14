@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] private JoustDifficultyData joustDifficultyData;
-
     [SerializeField] private float spawnDistance;
 
     private JoustPlayerMovement playerMovement;
@@ -17,10 +15,17 @@ public class ObstacleSpawner : MonoBehaviour
 
     private Vector3 centerPosition => Vector3.zero + Vector3.up * spawnDistance;
 
+    private JoustDifficultyData joustDifficultyData;
+
     private void Start()
     {
         playerMovement = JoustPlayerMovement.instance;
         playerMovement.OnStartRun.AddListener(() => lastSpawnTimestamp = Time.time);
+    }
+
+    public void Setup(JoustDifficultyData data)
+    {
+        joustDifficultyData = data;
     }
 
     private void LateUpdate()
@@ -46,7 +51,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     private Vector3 ComputePosition(int laneIndex)
     {
-        int centerIndex = 1;
+        int centerIndex = joustDifficultyData.laneCount / 2;
         int indexDelta = laneIndex - centerIndex;
         float distanceLaneToLane = 1.9f;
         float distanceDelta = indexDelta * distanceLaneToLane;
@@ -55,6 +60,6 @@ public class ObstacleSpawner : MonoBehaviour
 
     private int ComputeLane()
     {
-        return Random.Range(0, 3);
+        return Random.Range(0, joustDifficultyData.laneCount);
     }
 }

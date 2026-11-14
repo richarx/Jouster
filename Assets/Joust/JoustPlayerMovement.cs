@@ -48,6 +48,11 @@ public class JoustPlayerMovement : MonoBehaviour
     private void Start()
     {
         centerPosition = transform.position;
+    }
+
+    public void Setup(JoustDifficultyData data)
+    {
+        laneCount = data.laneCount;
         currentIndex = centerIndex;
     }
 
