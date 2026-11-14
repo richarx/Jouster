@@ -19,7 +19,8 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Start()
     {
-        SpawnPlayer(SpawnPosition.instance.Position);
+        if (SpawnPosition.instance != null)
+            SpawnPlayer(SpawnPosition.instance.Position);
     }
 
     public void SpawnPlayer(Vector3 position)
