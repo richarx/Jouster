@@ -43,6 +43,9 @@ public class ObstacleScroller : MonoBehaviour
     private void TryDealDamageToPlayer(Obstacle obstacle)
     {
         if (joustPlayer.CurrentLaneIndex == obstacle.assignedLane)
-            Debug.Log("Player was hit !");
+        {
+            //Debug.Log("Player was hit !");
+
+        }
     }
 }

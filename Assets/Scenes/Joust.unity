@@ -168,37 +168,28 @@ MonoBehaviour:
   timeToChangeLane: 0.3
   laneChangeEase: 27
   distanceLaneToLane: 1.9
-  maxSpeed: 32
-  timeToReachMaxSpeed: 5
+  maxSpeed: 48
+  timeToMaxSpeed: 30
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 4.457143
-      outSlope: 4.457143
+      value: 0.3
+      inSlope: 0.9244442
+      outSlope: 0.9244442
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.024038462
-    - serializedVersion: 3
-      time: 0.1
-      value: 0.25438982
-      inSlope: 0.24294049
-      outSlope: 0.24294049
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.07030352
+      outWeight: 0.043269232
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0.099047855
+      outSlope: 0.099047855
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.05769229
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

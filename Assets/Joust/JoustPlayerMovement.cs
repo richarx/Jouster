@@ -15,7 +15,7 @@ public class JoustPlayerMovement : MonoBehaviour
 
     [Space]
     [SerializeField] private float maxSpeed;
-    [SerializeField] private float timeToReachMaxSpeed;
+    [SerializeField] private float timeToMaxSpeed;
     [SerializeField] private AnimationCurve accelerationCurve;
 
     [HideInInspector] public UnityEvent OnStartRun = new UnityEvent();
@@ -31,14 +31,14 @@ public class JoustPlayerMovement : MonoBehaviour
 
     private int centerIndex => laneCount / 2;
     private Vector3 centerPosition;
-
     private Sequence moveSequence;
 
+    private float velocity;
+    private float currentSpeedTime;
+
+    private bool isMoving;
     private float lastMovement;
 
-    private float velocity;
-
-    private float startMovingTimestamp = -1.0f;
 
     private void Awake()
     {
@@ -55,12 +55,16 @@ public class JoustPlayerMovement : MonoBehaviour
     {
         inputPackage = inputPacker.ComputeInputPackage();
 
-        if (startMovingTimestamp < 0.0f && lastMovement != 0)
+        if (!isMoving && lastMovement != 0)
             StartMoving();
 
-        PerformForwardMovement();
+        if (isMoving)
+        {
+            PerformForwardMovement();
+            Odometer.instance.SetPlayerSpeed(velocity);
+        }
+
         PerformSideMovement();
-        Odometer.instance.SetPlayerSpeed(velocity);
     }
 
     private void PerformSideMovement()
@@ -106,20 +110,17 @@ public class JoustPlayerMovement : MonoBehaviour
 
     private void StartMoving()
     {
-        startMovingTimestamp = Time.time;
+        isMoving = true;
         OnStartRun?.Invoke();
     }
 
     private void PerformForwardMovement()
     {
-        if (startMovingTimestamp < 0.0f)
-            return;
+        currentSpeedTime += Time.deltaTime;
 
-        float timeSinceStartMoving = Time.time - startMovingTimestamp;
-        float clampedTime = Mathf.Clamp(timeSinceStartMoving, 0.0f, timeToReachMaxSpeed);
-        float normalizedTime = Tools.NormalizeValue(clampedTime, 0.0f, timeToReachMaxSpeed);
-        normalizedTime = Mathf.Clamp01(normalizedTime);
+        float normalizedTime = Mathf.Clamp01(currentSpeedTime / timeToMaxSpeed);
 
-        velocity = accelerationCurve.Evaluate(normalizedTime) * maxSpeed;
+        float speedMultiplier = accelerationCurve.Evaluate(normalizedTime);
+        velocity = maxSpeed * speedMultiplier;
     }
 }
