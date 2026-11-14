@@ -15,7 +15,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     [HideInInspector] public List<Obstacle> obstacles = new List<Obstacle>();
 
-    private Vector3 centerPosition => Vector3.zero + Vector3.forward * spawnDistance;
+    private Vector3 centerPosition => Vector3.zero + Vector3.up * spawnDistance;
 
     private void Start()
     {

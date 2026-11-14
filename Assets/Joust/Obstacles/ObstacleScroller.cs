@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ObstacleScroller : MonoBehaviour
@@ -18,14 +17,14 @@ public class ObstacleScroller : MonoBehaviour
     private void LateUpdate()
     {
         float movement = joustPlayer.Velocity * Time.deltaTime;
-        float damagePosition = damageLine.position.z;
-        float destroyPosition = destroyLine.position.z;
+        float damagePosition = damageLine.position.y;
+        float destroyPosition = destroyLine.position.y;
 
         for (int i = obstacleSpawner.obstacles.Count - 1; i >= 0; i--)
         {
             Obstacle obstacle = obstacleSpawner.obstacles[i];
             Transform child = obstacle.objectTransform;
-            if (child.position.z <= destroyPosition)
+            if (child.position.y <= destroyPosition)
             {
                 obstacleSpawner.obstacles.RemoveAt(i);
                 Destroy(child.gameObject);
@@ -33,15 +32,15 @@ public class ObstacleScroller : MonoBehaviour
             }
             else if (!obstacle.hasDealtDamage && child.position.z <= damagePosition)
             {
-                DealDamageToPlayer(obstacle);
+                TryDealDamageToPlayer(obstacle);
                 obstacle.hasDealtDamage = true;
             }
 
-            child.position += Vector3.back * movement;
+            child.position += Vector3.down * movement;
         }
     }
 
-    private void DealDamageToPlayer(Obstacle obstacle)
+    private void TryDealDamageToPlayer(Obstacle obstacle)
     {
         if (joustPlayer.CurrentLaneIndex == obstacle.assignedLane)
             Debug.Log("Player was hit !");
