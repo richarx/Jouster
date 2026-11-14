@@ -37,7 +37,6 @@ public class JoustPlayerMovement : MonoBehaviour
     private float lastMovement;
 
     private float velocity;
-    public float Velocity => velocity;
 
     private float startMovingTimestamp = -1.0f;
 
@@ -61,6 +60,7 @@ public class JoustPlayerMovement : MonoBehaviour
 
         PerformForwardMovement();
         PerformSideMovement();
+        Odometer.instance.SetPlayerSpeed(velocity);
     }
 
     private void PerformSideMovement()

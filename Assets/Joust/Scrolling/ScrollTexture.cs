@@ -16,7 +16,7 @@ public class ScrollTexture : MonoBehaviour
 
     private void LateUpdate()
     {
-        currentOffset += scrollSpeed * joustPlayer.Velocity * Time.deltaTime / 2.0f;
+        currentOffset += scrollSpeed * Odometer.instance.CurrentMovement / 2.0f;
 
         currentOffset.x %= 1f;
         currentOffset.y %= 1f;

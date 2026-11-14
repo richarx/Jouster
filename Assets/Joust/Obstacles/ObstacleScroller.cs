@@ -16,7 +16,7 @@ public class ObstacleScroller : MonoBehaviour
 
     private void LateUpdate()
     {
-        float movement = joustPlayer.Velocity * Time.deltaTime;
+        float movement = Odometer.instance.CurrentMovement;
         float damagePosition = damageLine.position.y;
         float destroyPosition = destroyLine.position.y;
 
