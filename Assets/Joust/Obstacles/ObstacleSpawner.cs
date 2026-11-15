@@ -26,7 +26,7 @@ public class ObstacleSpawner : MonoBehaviour
         SpawnFirstChunk();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         currentDistanceInChunk += Odometer.instance.CurrentMovement;
 

@@ -7,6 +7,7 @@ public class JoustManager : MonoBehaviour
     [Space]
     [SerializeField] private ObstacleSpawner obstacleSpawner;
     [SerializeField] private JoustPlayerStateMachine joustPlayer;
+    [SerializeField] private JoustPlayerPower joustPlayerPower;
     [SerializeField] private GroundManager groundManager;
 
     private void Start()
@@ -14,5 +15,6 @@ public class JoustManager : MonoBehaviour
         obstacleSpawner.Setup(data);
         joustPlayer.Setup(data);
         groundManager.Setup(data);
+        joustPlayerPower.Setup(data);
     }
 }

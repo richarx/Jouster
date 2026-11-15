@@ -5,14 +5,13 @@ using UnityEngine;
 public class JoustStunState : IJoustPlayerState
 {
     private float startStunTimestamp;
-    private float targetSpeedTime;
     private float targetVelocity;
 
     public void StartBehaviour(JoustPlayerStateMachine player, IJoustPlayerState.StateType previous)
     {
         startStunTimestamp = Time.time;
-        targetSpeedTime = player.currentSpeedTime * (1.0f - Mathf.Clamp01(player.data.knockbackPower));
-        targetVelocity = player.joustMoveState.ComputeVelocityFromTime(player, targetSpeedTime);
+        player.currentSpeedTime = player.currentSpeedTime * (1.0f - Mathf.Clamp01(player.data.knockbackPower));
+        targetVelocity = player.joustMoveState.ComputeVelocityFromTime(player, player.currentSpeedTime);
     }
 
     public void UpdateBehaviour(JoustPlayerStateMachine player)
@@ -38,7 +37,6 @@ public class JoustStunState : IJoustPlayerState
 
     public void StopBehaviour(JoustPlayerStateMachine player, IJoustPlayerState.StateType next)
     {
-        player.currentSpeedTime = targetSpeedTime;
     }
 
     public IJoustPlayerState.StateType GetStateType()

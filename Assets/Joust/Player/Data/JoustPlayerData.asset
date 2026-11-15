@@ -88,3 +88,5 @@ MonoBehaviour:
   knockbackPower: 0.5
   knockbackDuration: 3
   deathDeceleration: 10
+  maxPower: 200
+  powerPerSpeed: 1.5

@@ -2,6 +2,7 @@ using BoomLib.Inputs;
 using PrimeTween;
 using UnityEngine;
 
+[DefaultExecutionOrder(-100)]
 public class JoustPlayerStateMachine : MonoBehaviour
 {
     public JoustPlayerData data;

@@ -5,7 +5,7 @@ public class JoustPlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
-    void LateUpdate()
+    void Update()
     {
         animator.Play(ComputeAnimation(Odometer.instance.NormalizedSpeed));
     }

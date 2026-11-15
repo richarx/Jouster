@@ -25,4 +25,7 @@ public class JoustDifficultyData : ScriptableObject
     [Space]
     public int laneCount;
     public float totalDistance;
+
+    [Space]
+    public float targetPower;
 }
