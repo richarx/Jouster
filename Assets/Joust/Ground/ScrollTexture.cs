@@ -5,14 +5,7 @@ public class ScrollTexture : MonoBehaviour
     [SerializeField] private Material targetMaterial;
     [SerializeField] private Vector2 scrollSpeed;
 
-    private JoustPlayerMovement joustPlayer;
-
     private Vector2 currentOffset;
-
-    private void Start()
-    {
-        joustPlayer = JoustPlayerMovement.instance;
-    }
 
     private void LateUpdate()
     {

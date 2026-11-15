@@ -128,9 +128,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263186765}
-  - component: {fileID: 263186766}
   - component: {fileID: 263186767}
   - component: {fileID: 263186768}
+  - component: {fileID: 263186769}
   m_Layer: 0
   m_Name: JoustPlayer
   m_TagString: Untagged
@@ -155,50 +155,6 @@ Transform:
   - {fileID: 1004217802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &263186766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263186764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 737ff6d7a5e07f0439ed842a60ece1c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JoustPlayerMovement
-  timeToChangeLane: 0.3
-  laneChangeEase: 27
-  distanceLaneToLane: 1.9
-  maxSpeed: 32
-  timeToMaxSpeed: 30
-  accelerationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.3
-      inSlope: 0.9244442
-      outSlope: 0.9244442
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.043269232
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.099047855
-      outSlope: 0.099047855
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.05769229
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  OnStartRun:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &263186767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JoustPlayerHealth
   startingHP: 1
   startingArmor: 3
+  invincibilityDuration: 1.5
   OnTakeArmorDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -235,6 +192,24 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &263186769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263186764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5393903c5f179c641ad4e01901990848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JoustPlayerStateMachine
+  data: {fileID: 11400000, guid: 8b0210ffd5a76b44e91a67942f87b4ec, type: 2}
+  playerHealth: {fileID: 0}
+  currentIndex: 0
+  velocity: 0
+  currentSpeedTime: 0
+  lastMovement: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JoustManager
   data: {fileID: 11400000, guid: ba3d5545ad47e904c9c65e1acafed0d2, type: 2}
   obstacleSpawner: {fileID: 1791340172}
-  joustPlayer: {fileID: 263186766}
+  joustPlayer: {fileID: 263186769}
   groundManager: {fileID: 533065025}
 --- !u!1 &922356766
 GameObject:
@@ -1402,6 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a996a4ba94ac0248b81c740eb82a894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleScroller
+  playerHealth: {fileID: 263186768}
   damageLine: {fileID: 1336747068}
   destroyLine: {fileID: 1254908818}
 --- !u!1 &2006336591

@@ -8,12 +8,12 @@ public class ObstacleScroller : MonoBehaviour
     [SerializeField] private Transform damageLine;
     [SerializeField] private Transform destroyLine;
 
-    private JoustPlayerMovement joustPlayer;
+    private JoustPlayerStateMachine joustPlayer;
     private ObstacleSpawner obstacleSpawner;
 
     private void Start()
     {
-        joustPlayer = JoustPlayerMovement.instance;
+        joustPlayer = JoustPlayerStateMachine.instance;
         obstacleSpawner = GetComponent<ObstacleSpawner>();
     }
 

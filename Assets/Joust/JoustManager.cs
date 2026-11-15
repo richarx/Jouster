@@ -6,7 +6,7 @@ public class JoustManager : MonoBehaviour
 
     [Space]
     [SerializeField] private ObstacleSpawner obstacleSpawner;
-    [SerializeField] private JoustPlayerMovement joustPlayer;
+    [SerializeField] private JoustPlayerStateMachine joustPlayer;
     [SerializeField] private GroundManager groundManager;
 
     private void Start()

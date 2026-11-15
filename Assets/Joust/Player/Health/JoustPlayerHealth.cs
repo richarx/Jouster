@@ -5,6 +5,7 @@ public class JoustPlayerHealth : MonoBehaviour
 {
     [SerializeField] private int startingHP;
     [SerializeField] private int startingArmor;
+    [SerializeField] private float invincibilityDuration;
 
     [HideInInspector] public UnityEvent OnTakeArmorDamage = new UnityEvent();
     [HideInInspector] public UnityEvent OnTakeDamage = new UnityEvent();
@@ -17,6 +18,9 @@ public class JoustPlayerHealth : MonoBehaviour
 
     public bool IsDead => currentHealth <= 0;
     public bool IsArmored => currentArmor > 0;
+    public bool IsInvincible => Time.time - lastDamageTimestamp <= invincibilityDuration;
+
+    private float lastDamageTimestamp = 0.0f;
 
     private void Awake()
     {
@@ -26,7 +30,8 @@ public class JoustPlayerHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-        Debug.Log("Take Damage");
+        if (IsInvincible)
+            return;
 
         if (IsArmored)
         {
@@ -42,5 +47,7 @@ public class JoustPlayerHealth : MonoBehaviour
             else
                 OnTakeDamage?.Invoke();
         }
+
+        lastDamageTimestamp = Time.time;
     }
 }
