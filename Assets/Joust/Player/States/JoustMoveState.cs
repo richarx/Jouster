@@ -10,8 +10,14 @@ public class JoustMoveState : IJoustPlayerState
 
     public void UpdateBehaviour(JoustPlayerStateMachine player)
     {
-        PerformForwardMovement(player);
         PerformSideMovement(player);
+        PerformForwardMovement(player);
+
+        if (player.inputPackage.GetJump.WasPressedWithBuffer())
+        {
+            player.ChangeBehaviour(player.joustJumpState);
+            return;
+        }
     }
 
     public void PerformForwardMovement(JoustPlayerStateMachine player)

@@ -45,7 +45,7 @@ public class ObstacleScroller : MonoBehaviour
 
     private void TryDealDamageToPlayer(Obstacle obstacle)
     {
-        if (joustPlayer.CurrentLaneIndex == obstacle.assignedLane)
+        if (playerHealth.CanTakeDamage(obstacle, obstacle.assignedLane))
         {
             playerHealth.TakeDamage();
         }

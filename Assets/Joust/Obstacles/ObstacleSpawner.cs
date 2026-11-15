@@ -77,27 +77,27 @@ public class ObstacleSpawner : MonoBehaviour
         switch (obstacle.obstacleType)
         {
             case ObstacleType.Short:
-                CreateObstacle(joustDifficultyData.ShortObstacles.GetRandomElements().First(), obstacle.laneIndex);
+                CreateObstacle(obstacle, joustDifficultyData.ShortObstacles.GetRandomElements().First(), obstacle.laneIndex);
                 break;
             case ObstacleType.Tall:
-                CreateObstacle(joustDifficultyData.TallObstacles.GetRandomElements().First(), obstacle.laneIndex);
+                CreateObstacle(obstacle, joustDifficultyData.TallObstacles.GetRandomElements().First(), obstacle.laneIndex);
                 break;
             case ObstacleType.TallX2:
-                CreateObstacle(joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
-                CreateObstacle(joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 1);
+                CreateObstacle(obstacle, joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
+                CreateObstacle(obstacle, joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 1);
                 break;
             case ObstacleType.ShortX3:
-                CreateObstacle(joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
-                CreateObstacle(joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 1);
-                CreateObstacle(joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 2);
+                CreateObstacle(obstacle, joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
+                CreateObstacle(obstacle, joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 1);
+                CreateObstacle(obstacle, joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 2);
                 break;
         }
     }
 
-    private void CreateObstacle(GameObject prefab, int laneIndex)
+    private void CreateObstacle(ObstacleInCHunk obstacle, GameObject prefab, int laneIndex)
     {
         GameObject item = Instantiate(prefab, ComputePosition(laneIndex), Quaternion.identity, transform);
-        obstacles.Add(new Obstacle(item.transform, laneIndex));
+        obstacles.Add(new Obstacle(item.transform, laneIndex, obstacle));
     }
 
     private Vector3 ComputePosition(int laneIndex)

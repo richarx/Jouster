@@ -46,9 +46,7 @@ namespace BoomLib.Inputs
         public Vector2 GetMove => lastInputType == InputType.Gamepad ? gamepadMove : keyboardMove;
         public Vector2 GetLook => lastInputType == InputType.Gamepad ? gamepadLook : keyboardLook;
 
-        public InputData GetRoll => lastInputType == InputType.Gamepad ? eastButton : spaceKey;
-        public InputData GetAttack => lastInputType == InputType.Gamepad ? westButton : leftMouse;
-        public InputData GetParry => lastInputType == InputType.Gamepad ? leftShoulder : rightMouse;
+        public InputData GetJump => lastInputType == InputType.Gamepad ? southButton : spaceKey;
 
         public InputData GetMenuLeft => lastInputType == InputType.Gamepad ? leftArrowButton : leftKey;
         public InputData GetMenuUp => lastInputType == InputType.Gamepad ? upArrowButton : upKey;

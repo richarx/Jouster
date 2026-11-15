@@ -5,6 +5,7 @@ using UnityEngine;
 public class JoustPlayerStateMachine : MonoBehaviour
 {
     public JoustPlayerData data;
+    public Transform graphics;
 
     public static JoustPlayerStateMachine instance;
 

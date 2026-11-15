@@ -16,6 +16,11 @@ public class JoustPlayerData : ScriptableObject
     public AnimationCurve accelerationCurve;
 
     [Space]
+    public float jumpDuration;
+    public float jumpMaxHeight;
+    public AnimationCurve jumpCurve;
+
+    [Space]
     public float knockbackPower;
     public float knockbackDuration;
 

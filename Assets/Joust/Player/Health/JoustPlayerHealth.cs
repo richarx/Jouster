@@ -11,6 +11,8 @@ public class JoustPlayerHealth : MonoBehaviour
     [HideInInspector] public UnityEvent OnTakeDamage = new UnityEvent();
     [HideInInspector] public UnityEvent OnDie = new UnityEvent();
 
+    private JoustPlayerStateMachine joustPlayer;
+
     private int currentHealth;
     private int currentArmor;
     public int CurrentHealth => currentHealth;
@@ -26,6 +28,27 @@ public class JoustPlayerHealth : MonoBehaviour
     {
         currentHealth = startingHP;
         currentArmor = startingArmor;
+    }
+
+    private void Start()
+    {
+        joustPlayer = GetComponent<JoustPlayerStateMachine>();
+    }
+
+    public bool CanTakeDamage(Obstacle obstacle, int lane)
+    {
+        if (joustPlayer.CurrentLaneIndex == lane)
+        {
+            if (joustPlayer.currentState.GetStateType() == IJoustPlayerState.StateType.Jump)
+            {
+                bool canJumpAbove = joustPlayer.joustJumpState.CanJumpAbove(obstacle);
+                return !canJumpAbove;
+            }
+
+            return true;
+        }
+
+        return false;
     }
 
     public void TakeDamage()
