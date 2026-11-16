@@ -45,7 +45,14 @@ public class ObstacleScroller : MonoBehaviour
 
     private void TryDealDamageToPlayer(Obstacle obstacle)
     {
-        if (playerHealth.CanTakeDamage(obstacle, obstacle.assignedLane))
+        int lane = obstacle.assignedLane;
+
+        if (obstacle.chunkData.obstacleType == ObstacleType.Knight)
+        {
+            lane = obstacle.objectTransform.GetComponent<JoustEnemyMovement>().CurrentLane;
+        }
+
+        if (playerHealth.CanTakeDamage(obstacle, lane))
         {
             playerHealth.TakeDamage();
         }

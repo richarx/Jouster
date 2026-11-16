@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f42a38d58010534d9befe4a72bc50be, type: 3}
   m_Name: Easy
   m_EditorClassIdentifier: Assembly-CSharp::JoustDifficultyData
+  enemyData: {fileID: 11400000, guid: 8c45f86160e460b478247a736f4d3d29, type: 2}
   earlyChunksPool:
   - {fileID: 6068682363632576240, guid: 8c994fb44a26ad448a4530002137364e, type: 3}
   - {fileID: 3395962247755309267, guid: 239a3d2d43f3fb94ca64c568b747697d, type: 3}
@@ -26,5 +27,5 @@ MonoBehaviour:
   short_X3_Obstacles:
   - {fileID: 6949443193113980889, guid: b1990985304b8e541920bbc20b2ba940, type: 3}
   laneCount: 3
-  totalDistance: 200
-  targetPower: 50
+  totalDistance: 64
+  targetPower: 40

@@ -19,6 +19,9 @@ public class ObstacleSpawner : MonoBehaviour
     private float currentDistanceInChunk;
     private float scaledChunkDistance;
     private float currentScaleBonus;
+    private bool hasReachedEnd;
+    private float endDistance;
+    private bool isSpawningOver;
 
     public void Setup(JoustDifficultyData data)
     {
@@ -30,11 +33,41 @@ public class ObstacleSpawner : MonoBehaviour
     {
         currentDistanceInChunk += Odometer.instance.CurrentMovement;
 
+        if (isSpawningOver)
+            return;
+
+        if (hasReachedEnd)
+        {
+            if (currentDistanceInChunk >= endDistance + spawnDistance)
+            {
+                SpawnKnight();
+                isSpawningOver = true;
+            }
+            return;
+        }
+
         if (currentChunk == null || currentDistanceInChunk >= scaledChunkDistance)
-            SelectNewChunk();
+        {
+            if (currentDistanceInChunk >= joustDifficultyData.totalDistance)
+            {
+                hasReachedEnd = true;
+                endDistance = currentDistanceInChunk;
+                return;
+            }
+            else
+            {
+                SelectNewChunk();
+            }
+        }
 
         if (!currentChunk.IsEmpty)
             CheckChunkForSpawn();
+    }
+
+    private void SpawnKnight()
+    {
+        Obstacle enemy = SpawnObstacle(new ObstacleInCHunk(ObstacleType.Knight, currentDistanceInChunk, Random.Range(0, joustDifficultyData.laneCount)));
+        enemy.objectTransform.GetComponent<JoustEnemyMovement>().Setup(joustDifficultyData.EnemyData, enemy.assignedLane, joustDifficultyData.laneCount);
     }
 
     private void SpawnFirstChunk()
@@ -72,40 +105,43 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnObstacle(ObstacleInCHunk obstacle)
+    private Obstacle SpawnObstacle(ObstacleInCHunk obstacle)
     {
         switch (obstacle.obstacleType)
         {
+            default:
             case ObstacleType.Short:
-                CreateObstacle(obstacle, joustDifficultyData.ShortObstacles.GetRandomElements().First(), obstacle.laneIndex);
-                break;
+                return CreateObstacle(obstacle, joustDifficultyData.ShortObstacles.GetRandomElements().First(), obstacle.laneIndex);
             case ObstacleType.Tall:
-                CreateObstacle(obstacle, joustDifficultyData.TallObstacles.GetRandomElements().First(), obstacle.laneIndex);
-                break;
+                return CreateObstacle(obstacle, joustDifficultyData.TallObstacles.GetRandomElements().First(), obstacle.laneIndex);
             case ObstacleType.TallX2:
-                CreateObstacle(obstacle, joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
                 CreateObstacle(obstacle, joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 1);
-                break;
+                return CreateObstacle(obstacle, joustDifficultyData.Tall_X2_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
             case ObstacleType.ShortX3:
-                CreateObstacle(obstacle, joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
                 CreateObstacle(obstacle, joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 1);
                 CreateObstacle(obstacle, joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex + 2);
-                break;
+                return CreateObstacle(obstacle, joustDifficultyData.Short_X3_Obstacles.GetRandomElements().First(), obstacle.laneIndex);
+            case ObstacleType.Knight:
+                return CreateObstacle(obstacle, joustDifficultyData.EnemyData.knightPrefab, obstacle.laneIndex);
         }
     }
 
-    private void CreateObstacle(ObstacleInCHunk obstacle, GameObject prefab, int laneIndex)
+    private Obstacle CreateObstacle(ObstacleInCHunk obstacle, GameObject prefab, int laneIndex)
     {
-        GameObject item = Instantiate(prefab, ComputePosition(laneIndex), Quaternion.identity, transform);
-        obstacles.Add(new Obstacle(item.transform, laneIndex, obstacle));
+        GameObject item = Instantiate(prefab, ComputePosition(obstacle, laneIndex), Quaternion.identity, transform);
+        Obstacle newObstacle = new Obstacle(item.transform, laneIndex, obstacle);
+        obstacles.Add(newObstacle);
+
+        return newObstacle;
     }
 
-    private Vector3 ComputePosition(int laneIndex)
+    private Vector3 ComputePosition(ObstacleInCHunk obstacle, int laneIndex)
     {
         int centerIndex = joustDifficultyData.laneCount / 2;
         int indexDelta = laneIndex - centerIndex;
         float distanceLaneToLane = 1.9f;
         float distanceDelta = indexDelta * distanceLaneToLane;
-        return centerPosition + Vector3.right * distanceDelta;
+        Vector3 position = obstacle.obstacleType == ObstacleType.Knight ? centerPosition + Vector3.up * spawnDistance : centerPosition;
+        return position + Vector3.right * distanceDelta;
     }
 }

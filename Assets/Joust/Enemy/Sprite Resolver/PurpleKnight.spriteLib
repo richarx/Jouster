@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Run
+    m_Hash: 675013152
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Run_0
+      m_Hash: 27503621
+      m_Sprite: {fileID: -6561678499842566536, guid: 966fef34e76316f49900186bed97b8f5, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6561678499842566536, guid: 966fef34e76316f49900186bed97b8f5, type: 3}
+    - m_Name: Run_1
+      m_Hash: 916757651
+      m_Sprite: {fileID: -143507577402036059, guid: 966fef34e76316f49900186bed97b8f5, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -143507577402036059, guid: 966fef34e76316f49900186bed97b8f5, type: 3}
+    - m_Name: Run_2
+      m_Hash: 799919401
+      m_Sprite: {fileID: 7532275628449201447, guid: 966fef34e76316f49900186bed97b8f5, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7532275628449201447, guid: 966fef34e76316f49900186bed97b8f5, type: 3}
+    - m_Name: Run_3
+      m_Hash: 413859263
+      m_Sprite: {fileID: 5488787891242401018, guid: 966fef34e76316f49900186bed97b8f5, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5488787891242401018, guid: 966fef34e76316f49900186bed97b8f5, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 4
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639303605400498879
+  m_Version: 1

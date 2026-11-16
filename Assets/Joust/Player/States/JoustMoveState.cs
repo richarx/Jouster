@@ -62,7 +62,7 @@ public class JoustMoveState : IJoustPlayerState
     private void MoveTo(JoustPlayerStateMachine player, Vector3 targetPosition)
     {
         if (player.moveSequence.isAlive)
-            player.moveSequence.Complete();
+            player.moveSequence.Stop();
 
         player.moveSequence = Sequence.Create()
         .Chain(Tween.Position(player.transform, targetPosition, player.data.timeToChangeLane, player.data.laneChangeEase));

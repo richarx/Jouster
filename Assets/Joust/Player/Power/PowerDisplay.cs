@@ -46,20 +46,15 @@ public class PowerDisplay : MonoBehaviour
 
         float newPosition = Mathf.SmoothDamp(target.localPosition.x, targetPosition, ref targetVelocity, animationSmoothTime);
         target.localPosition = new Vector3(newPosition, 0.0f, 0.0f);
-
-        Debug.Log($"Local : {target.localPosition.x} / {newPosition} / {targetPosition}");
     }
 
     private void SetTarget()
     {
         target.gameObject.SetActive(true);
-        Debug.Log("Activate !");
 
         float normalizedTarget = Tools.NormalizeValue(playerPower.TargetPower, 0.0f, playerPower.MaxPower);
         float maxSize = bar.GetComponent<RectTransform>().sizeDelta.x;
 
         targetPosition = Tools.NormalizeValueInRange(normalizedTarget * maxSize, 0.0f, maxSize, -maxSize / 2.0f, maxSize / 2.0f);
-
-        Debug.Log($"Target : {playerPower.TargetPower} / {playerPower.MaxPower} -> {normalizedTarget} * {maxSize} = {targetPosition}");
     }
 }

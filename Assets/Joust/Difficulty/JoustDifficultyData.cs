@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "JoustDifficultyData", menuName = "Scriptable Objects/JoustDifficultyData")]
 public class JoustDifficultyData : ScriptableObject
 {
+    [SerializeField] private JoustEnemyData enemyData;
+
+    [Space]
     [SerializeField] private List<GameObject> earlyChunksPool;
     [SerializeField] private List<GameObject> lateChunksPool;
 
@@ -13,6 +16,8 @@ public class JoustDifficultyData : ScriptableObject
     [SerializeField] private List<GameObject> tallObstacles;
     [SerializeField] private List<GameObject> tall_X2_Obstacles;
     [SerializeField] private List<GameObject> short_X3_Obstacles;
+
+    public JoustEnemyData EnemyData => enemyData;
 
     public ReadOnlyCollection<GameObject> earlyChunks => earlyChunksPool.AsReadOnly();
     public ReadOnlyCollection<GameObject> lateChunks => lateChunksPool.AsReadOnly();

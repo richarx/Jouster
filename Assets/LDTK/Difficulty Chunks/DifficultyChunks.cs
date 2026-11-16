@@ -16,5 +16,6 @@ public enum ObstacleType
     Short,
     Tall,
     TallX2,
-    ShortX3
+    ShortX3,
+    Knight
 }

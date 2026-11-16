@@ -85,8 +85,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  knockbackPower: 0.5
+  knockbackPower: 0.8
   knockbackDuration: 3
   deathDeceleration: 10
-  maxPower: 200
+  maxPower: 100
   powerPerSpeed: 1.5

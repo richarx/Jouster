@@ -11,6 +11,7 @@ public class JoustPlayerStateMachine : MonoBehaviour
     public static JoustPlayerStateMachine instance;
 
     [HideInInspector] public JoustPlayerHealth playerHealth;
+    [HideInInspector] public JoustPlayerPower playerPower;
 
     public JoustIdleState joustIdleState = new JoustIdleState();
     public JoustMoveState joustMoveState = new JoustMoveState();
@@ -46,6 +47,7 @@ public class JoustPlayerStateMachine : MonoBehaviour
 
     private void Start()
     {
+        playerPower = GetComponent<JoustPlayerPower>();
         playerHealth = GetComponent<JoustPlayerHealth>();
         playerHealth.OnTakeArmorDamage.AddListener(() => ChangeBehaviour(joustStunState));
         playerHealth.OnTakeDamage.AddListener(() => ChangeBehaviour(joustStunState));
