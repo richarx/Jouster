@@ -27,5 +27,5 @@ MonoBehaviour:
   short_X3_Obstacles:
   - {fileID: 6949443193113980889, guid: b1990985304b8e541920bbc20b2ba940, type: 3}
   laneCount: 3
-  totalDistance: 64
-  targetPower: 40
+  totalDistance: 30
+  targetPower: 35

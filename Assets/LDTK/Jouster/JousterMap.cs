@@ -28,4 +28,24 @@ namespace Map
         Exterior,
         Joust
     }
+
+    /// <summary>
+    /// LDtk Enum for JousterMap
+    /// </summary>
+    public enum GateType
+    {
+        Doctor,
+        Joust
+    }
+
+    /// <summary>
+    /// LDtk Enum for JousterMap
+    /// </summary>
+    public enum DialogueEvent
+    {
+        None,
+        Inscription,
+        OpponentSelection,
+        QuitJoust
+    }
 }

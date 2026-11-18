@@ -1,0 +1,40 @@
+{
+  "Rects": [
+    {
+      "x": 32,
+      "y": 0,
+      "w": 16,
+      "h": 16
+    }
+  ],
+  "Def": {
+    "__cHei": 12,
+    "__cWid": 4,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000000000000000000000000000000000000000000",
+      "averageColors": "67665877a987488876666876b98758777964596489747864586469646a75897559745974597459745974597459745974697469747a757a758a54648866a559927a44749976957a938944849986958a939a989a98877789643877288700000000"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "UiIcons",
+    "padding": 0,
+    "pxHei": 192,
+    "pxWid": 64,
+    "relPath": "../Sprites/MiniWorldSprites/MiniWorldSprites/User Interface/UiIcons.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 212
+  }
+}

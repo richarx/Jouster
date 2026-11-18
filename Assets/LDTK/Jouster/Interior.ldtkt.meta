@@ -4980,7 +4980,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: f7c9d1c6d088c8b40b6709c196dcdc17
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -7, y: 8}
+      - {x: -7, y: -8}
+      - {x: 8, y: -8}
     tessellationDetail: 0
   - name: Interior_321
     originalName: 
@@ -4995,7 +5000,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: f37b360657810e846b2a56066b6c4282
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
     tessellationDetail: 0
   - name: Interior_322
     originalName: 
@@ -5010,7 +5020,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: f1b8033cf763e7043ba49c5a2dfe17d4
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 7, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 7, y: -8}
     tessellationDetail: 0
   - name: Interior_323
     originalName: 
@@ -5746,7 +5761,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 2ecb9feba6188d24fa6bfb23d5e9a118
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -7, y: 8}
+      - {x: -7, y: -8}
+      - {x: 8, y: -8}
     tessellationDetail: 0
   - name: Interior_371
     originalName: 
@@ -5761,7 +5781,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: f0fb11dd1a652fc4ba3c7ce3934fddb1
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
     tessellationDetail: 0
   - name: Interior_372
     originalName: 
@@ -5776,7 +5801,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 787d7512faf15f14b923474508abfb02
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 7, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 7, y: -8}
     tessellationDetail: 0
   - name: Interior_373
     originalName: 
@@ -6586,7 +6616,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 217d174dea8aae349b634f2ec9e5cbed
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -1, y: 8}
+      - {x: -1, y: -8}
+      - {x: 8, y: -8}
     tessellationDetail: 0
   - name: Interior_426
     originalName: 
@@ -6601,7 +6636,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: c66995bc7a121d64686201dd20fcdf88
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
     tessellationDetail: 0
   - name: Interior_427
     originalName: 
@@ -6616,7 +6656,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 9b3935b240746a0458eddeec669c0c2b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 3, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 3, y: -8}
     tessellationDetail: 0
   - name: Interior_428
     originalName: 
@@ -7336,7 +7381,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 3a6966d64eb6a43418ce450a9f7f205b
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -1, y: 8}
+      - {x: -1, y: -8}
+      - {x: 8, y: -8}
     tessellationDetail: 0
   - name: Interior_476
     originalName: 
@@ -7351,7 +7401,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: d2960e9a5e5bcc04fbc7ff12d6830cba
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
     tessellationDetail: 0
   - name: Interior_477
     originalName: 
@@ -7366,7 +7421,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 5911ad3413539dd4b9dc716cbfe97433
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 3, y: -8}
+      - {x: 3, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
     tessellationDetail: 0
   - name: Interior_478
     originalName: 
@@ -8086,7 +8146,13 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: b715712f540d3f841b520c8d93d7cebf
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 2}
+      - {x: 8, y: 8}
+      - {x: -2, y: 8}
+      - {x: -2, y: -1}
+      - {x: 2, y: -1}
     tessellationDetail: 0
   - name: Interior_526
     originalName: 
@@ -8101,7 +8167,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 929ceebf88baca248a059f53c3a9d610
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 8, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: 2}
+      - {x: 8, y: 2}
     tessellationDetail: 0
   - name: Interior_527
     originalName: 
@@ -8116,7 +8187,13 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 0c5b191bcf2cf3f409bac0c85da2269d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 4, y: 8}
+      - {x: -8, y: 8}
+      - {x: -8, y: 2}
+      - {x: 0, y: -1}
+      - {x: 4, y: -1}
     tessellationDetail: 0
   - name: Interior_528
     originalName: 
@@ -9646,7 +9723,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: a9e02aac687bc054d8ca35784a213546
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 6, y: 7}
+      - {x: -6, y: 7}
+      - {x: -6, y: -7}
+      - {x: 6, y: -7}
     tessellationDetail: 0
   - name: Interior_630
     originalName: 
@@ -9661,7 +9743,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 233e3b91f6c1e8f48837ecc670491837
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 6, y: 7}
+      - {x: -6, y: 7}
+      - {x: -6, y: -7}
+      - {x: 6, y: -7}
     tessellationDetail: 0
   - name: Interior_631
     originalName: 
@@ -9676,7 +9763,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: c4264e9e44771034db231beefdc566c9
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 6, y: 7}
+      - {x: -6, y: 7}
+      - {x: -6, y: -7}
+      - {x: 6, y: -7}
     tessellationDetail: 0
   - name: Interior_632
     originalName: 
@@ -9691,7 +9783,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 04ea2ecfadfcc4a43b99a356d190084d
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: 6, y: 7}
+      - {x: -6, y: 7}
+      - {x: -6, y: -7}
+      - {x: 6, y: -7}
     tessellationDetail: 0
   - name: Interior_633
     originalName: 

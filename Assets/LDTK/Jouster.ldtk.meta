@@ -29,10 +29,22 @@ ScriptedImporter:
   - _key: IntClif_1
     _asset: {instanceID: 0}
   _entities:
+  - _key: ChallengeShield
+    _asset: {instanceID: 0}
   - _key: Spawn
     _asset: {fileID: 475705944306747751, guid: a40b5cfeeb321f5478d840cb83afebe1, type: 3}
+  - _key: Respawn
+    _asset: {instanceID: 0}
   - _key: Door
     _asset: {fileID: 2955047604777379071, guid: cb7824a07669e0d4f853e6f714ad09d3, type: 3}
+  - _key: Joust_Trigger
+    _asset: {instanceID: 0}
+  - _key: Doctor_Trigger
+    _asset: {instanceID: 0}
+  - _key: JoustSelectionShield
+    _asset: {instanceID: 0}
+  - _key: Gate
+    _asset: {instanceID: 0}
   _enumGenerate: 1
   _enumPath: Jouster/JousterMap.cs
   _enumNamespace: Map

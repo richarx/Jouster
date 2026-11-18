@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JoustEnemyData
   weightClass: 0
   reactionTime: 0
-  strategy: {fileID: 11400000, guid: 9613c896438ea384b9e05f5ed399cd56, type: 2}
+  strategy: {fileID: 11400000, guid: 558514774d73bb740b021a921c968d1d, type: 2}
   knightPrefab: {fileID: 9048583357579229725, guid: d0da63ad406c87c4a85a3e597a48fe37, type: 3}
