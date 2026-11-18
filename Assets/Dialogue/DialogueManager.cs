@@ -13,20 +13,31 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     [Header("Choice Button UI")]
-    public DialogueButton choiceButtonPrefab;
-    public Transform choiceButtonPanel;
+    [SerializeField] private DialogueButton choiceButtonPrefab;
+    [SerializeField] private Transform choiceButtonPanel;
+
+    public static DialogueManager instance;
 
     private Dictionary<string, RuntimeDialogueNode> nodeLookup = new Dictionary<string, RuntimeDialogueNode>();
     private RuntimeDialogueNode currentNode;
-    private Action<DialogueEvent> currentCallback;
 
-    public void StartDialogue(RuntimeDialogueGraph dialogueGraph, Action<DialogueEvent> callback)
+    private Action onDialogueEnd;
+    private Action<DialogueEvent> onDialogueEvent;
+
+    private void Awake()
     {
-        currentCallback = null;
+        instance = this;
+    }
+
+    public void StartDialogue(RuntimeDialogueGraph dialogueGraph, Action endDialogueCallback, Action<DialogueEvent> dialogueEventCallback)
+    {
+        onDialogueEnd = null;
+        onDialogueEvent = null;
         currentNode = null;
         nodeLookup.Clear();
 
-        currentCallback = callback;
+        onDialogueEnd = endDialogueCallback;
+        onDialogueEvent = dialogueEventCallback;
 
         foreach (RuntimeDialogueNode node in dialogueGraph.AllNodes)
         {
@@ -73,7 +84,15 @@ public class DialogueManager : MonoBehaviour
         if (isEventNode)
         {
             SendEvent(currentNode.dialogueEvent);
-            ShowNode(currentNode.NextNodeID);
+
+            if (!string.IsNullOrEmpty(currentNode.NextNodeID))
+            {
+                ShowNode(currentNode.NextNodeID);
+            }
+            else
+            {
+                EndDialogue();
+            }
             return;
         }
 
@@ -134,7 +153,7 @@ public class DialogueManager : MonoBehaviour
                 break;
         }
 
-        currentCallback?.Invoke(dialogueEvent);
+        onDialogueEvent?.Invoke(dialogueEvent);
     }
 
     private void CleanPreviousButtons()
@@ -147,8 +166,11 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         currentNode = null;
-        currentCallback = null;
 
         CleanPreviousButtons();
+
+        onDialogueEnd?.Invoke();
+        onDialogueEnd = null;
+        onDialogueEvent = null;
     }
 }

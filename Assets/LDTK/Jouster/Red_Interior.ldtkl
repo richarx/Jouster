@@ -214,6 +214,22 @@
 					"fieldInstances": [],
 					"__worldX": -704,
 					"__worldY": 272
+				},
+				{
+					"__identifier": "Joust_Inscription",
+					"__grid": [45,28],
+					"__pivot": [0.5,0.5],
+					"__tags": [],
+					"__tile": null,
+					"__smartColor": "#E4A672",
+					"iid": "fe4c8190-bde0-11f1-9b66-ad6fe10fb4f1",
+					"width": 16,
+					"height": 16,
+					"defUid": 222,
+					"px": [728,456],
+					"fieldInstances": [],
+					"__worldX": -184,
+					"__worldY": 264
 				}
 			]
 		},

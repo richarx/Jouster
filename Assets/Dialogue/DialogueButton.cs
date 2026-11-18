@@ -12,7 +12,6 @@ public class DialogueButton : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("On Click !!!");
         onClick?.Invoke();
     }
 

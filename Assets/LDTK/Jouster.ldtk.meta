@@ -45,6 +45,8 @@ ScriptedImporter:
     _asset: {instanceID: 0}
   - _key: Gate
     _asset: {instanceID: 0}
+  - _key: Joust_Inscription
+    _asset: {fileID: 2971667040836428230, guid: b6438d82a4744da4680ba71e5c987650, type: 3}
   _enumGenerate: 1
   _enumPath: Jouster/JousterMap.cs
   _enumNamespace: Map

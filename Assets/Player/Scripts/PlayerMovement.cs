@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private InputPacker imputPacker;
     private InputPackage currentInputs;
+    public InputPackage CurrentInputs => currentInputs;
 
     private Vector2 moveVelocity;
     private int lastLookDirection;

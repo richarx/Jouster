@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Map;
 using Unity.GraphToolkit.Editor;
+using Unity.VisualScripting;
 using UnityEditor.AssetImporters;
 using UnityEngine;
 
@@ -91,7 +92,9 @@ public class DialogueGrapgImporter : ScriptedImporter
 
     private void ProcessEventNode(EventNode node, RuntimeDialogueNode runtimeNode, Dictionary<INode, string> nodeIDMap)
     {
-        runtimeNode.dialogueEvent = GetPortValue<DialogueEvent>(node.GetInputPortByName("EventType"));
+        INodeOption nodeOption = node.GetNodeOptionByName(EventNode.optionID);
+        nodeOption.TryGetValue<DialogueEvent>(out DialogueEvent dialogueEvent);
+        runtimeNode.dialogueEvent = dialogueEvent;
 
         IPort nextNodePort = node.GetOutputPortByName("out")?.FirstConnectedPort;
         if (nextNodePort != null)

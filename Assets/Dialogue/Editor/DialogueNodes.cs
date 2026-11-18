@@ -64,7 +64,7 @@ public class ChoiceNode : Node
 [Serializable]
 public class EventNode : Node
 {
-    const string optionID = "EventType";
+    public const string optionID = "EventType";
 
     protected override void OnDefinePorts(IPortDefinitionContext context)
     {
