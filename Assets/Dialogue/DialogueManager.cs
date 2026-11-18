@@ -3,11 +3,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Map;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
-    public RuntimeDialogueGraph RuntimeGraph;
-
     [Header("UI Components")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI speakerNameText;
@@ -19,17 +18,24 @@ public class DialogueManager : MonoBehaviour
 
     private Dictionary<string, RuntimeDialogueNode> nodeLookup = new Dictionary<string, RuntimeDialogueNode>();
     private RuntimeDialogueNode currentNode;
+    private Action<DialogueEvent> currentCallback;
 
-    private void Start()
+    public void StartDialogue(RuntimeDialogueGraph dialogueGraph, Action<DialogueEvent> callback)
     {
-        foreach (RuntimeDialogueNode node in RuntimeGraph.AllNodes)
+        currentCallback = null;
+        currentNode = null;
+        nodeLookup.Clear();
+
+        currentCallback = callback;
+
+        foreach (RuntimeDialogueNode node in dialogueGraph.AllNodes)
         {
             nodeLookup[node.NodeID] = node;
         }
 
-        if (!string.IsNullOrEmpty(RuntimeGraph.EntryNodeID))
+        if (!string.IsNullOrEmpty(dialogueGraph.EntryNodeID))
         {
-            ShowNode(RuntimeGraph.EntryNodeID);
+            ShowNode(dialogueGraph.EntryNodeID);
         }
         else
         {
@@ -62,19 +68,20 @@ public class DialogueManager : MonoBehaviour
 
         currentNode = nodeLookup[nodeID];
 
-        dialoguePanel.SetActive(true);
-        speakerNameText.SetText(currentNode.SpeakerName);
-        dialogueText.SetText(currentNode.DialogueText);
-
-        CleanPreviousButtons();
-
         bool isEventNode = currentNode.dialogueEvent != DialogueEvent.None;
 
         if (isEventNode)
         {
             SendEvent(currentNode.dialogueEvent);
+            ShowNode(currentNode.NextNodeID);
             return;
         }
+
+        dialoguePanel.SetActive(true);
+        speakerNameText.SetText(currentNode.SpeakerName);
+        dialogueText.SetText(currentNode.DialogueText);
+
+        CleanPreviousButtons();
 
         bool isChoiceNode = currentNode.Choices.Count > 0;
 
@@ -126,6 +133,8 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("None !");
                 break;
         }
+
+        currentCallback?.Invoke(dialogueEvent);
     }
 
     private void CleanPreviousButtons()
@@ -138,6 +147,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         currentNode = null;
+        currentCallback = null;
 
         CleanPreviousButtons();
     }
