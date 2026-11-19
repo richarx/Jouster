@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f42a38d58010534d9befe4a72bc50be, type: 3}
+  m_Name: Hard
+  m_EditorClassIdentifier: Assembly-CSharp::JoustDifficultyData
+  enemyData: {fileID: 11400000, guid: baee76db3f71ea140ac6f58f627b2e62, type: 2}
+  earlyChunksPool:
+  - {fileID: 6068682363632576240, guid: 8c994fb44a26ad448a4530002137364e, type: 3}
+  - {fileID: 3395962247755309267, guid: 239a3d2d43f3fb94ca64c568b747697d, type: 3}
+  lateChunksPool:
+  - {fileID: 174452821311384440, guid: 367456ab9a59ad54c95902e99b6a9f91, type: 3}
+  shortObstacles:
+  - {fileID: 6949443193113980889, guid: b1990985304b8e541920bbc20b2ba940, type: 3}
+  tallObstacles:
+  - {fileID: 6949443193113980889, guid: bee11e5891891de48bd11d3fe267811e, type: 3}
+  tall_X2_Obstacles:
+  - {fileID: 6949443193113980889, guid: bee11e5891891de48bd11d3fe267811e, type: 3}
+  short_X3_Obstacles:
+  - {fileID: 6949443193113980889, guid: b1990985304b8e541920bbc20b2ba940, type: 3}
+  laneCount: 3
+  totalDistance: 30
+  targetPower: 35

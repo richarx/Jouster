@@ -17,10 +17,26 @@ public class JoustEnemyData : ScriptableObject
         Slow
     }
 
+    public enum HealthStatus
+    {
+        GoodHealth,
+        Injured,
+        BarelyHanging
+    }
+
     public WeightClass weightClass;
     public ReactionTime reactionTime;
     public Strategy strategy;
 
     [Space]
     public GameObject knightPrefab;
+
+    [Space]
+    public string knightName;
+    public string knightTitle;
+    public string horseName;
+    public int skillLevel;
+    public HealthStatus healthStatus;
+
+    public Color knightColor;
 }

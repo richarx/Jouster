@@ -21,13 +21,13 @@ public class IconTrigger : BasicTrigger
         interactIcon.Setup(iconOffset);
     }
 
-    private void DisplayIcon()
+    public void DisplayIcon()
     {
         interactIcon.DisplayIcon();
         UpdateIconType(PlayerMovement.instance.CurrentInputs.lastInputType);
     }
 
-    private void HideIcon()
+    public void HideIcon()
     {
         interactIcon.HideIcon();
     }
