@@ -16,9 +16,9 @@ MonoBehaviour:
   reactionTime: 0
   strategy: {fileID: 11400000, guid: c0be08c451237954e9745ce52f956274, type: 2}
   knightPrefab: {fileID: 2191100815132198270, guid: 0b294a85dc3cb2c4aa193644f1882dfc, type: 3}
-  knightName: 
-  knightTitle: 
-  horseName: 
-  skillLevel: 0
+  knightName: Ringo
+  knightTitle: Lord of There
+  horseName: Big man
+  skillLevel: 3
   healthStatus: 0
   knightColor: {r: 0.5660378, g: 0.1254895, b: 0.4766784, a: 1}

@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 328548068}
   - component: {fileID: 328548069}
   - component: {fileID: 328548070}
+  - component: {fileID: 328548071}
   m_Layer: 0
   m_Name: OpponentSelection
   m_TagString: Untagged
@@ -393,6 +394,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OpponentSelection
   camera: {fileID: 921378861}
   selectionShieldPrefab: {fileID: 3099192331889831043, guid: 1e54bcebe2564f242b63ea5d44690709, type: 3}
+  OnOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClose:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &328548071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328548066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f071b32b0b07bf4f8032dd8f3e05bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisplayOpponent
+  opponentPanel: {fileID: 2011996776}
+  knightName: {fileID: 2054477726}
+  knightTitle: {fileID: 1408229457}
+  horseName: {fileID: 428020426}
+  healthStatus: {fileID: 1858192594}
+  skillIconHolder: {fileID: 290826779}
+  skillIconPrefab: {fileID: 2620510189891761056, guid: e0bf52b4d9e687346b602305910c1446, type: 3}
+  opponentSelection: {fileID: 328548070}
 --- !u!1 &340341228
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,11 +491,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2011996776}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 980}
-  m_Pivot: {x: 0.5, y: 1}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341759199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,7 +1218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &921378860
 Transform:
   m_ObjectHideFlags: 0
@@ -7052,6 +7079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2011996776}
+  - component: {fileID: 2011996777}
   m_Layer: 0
   m_Name: Opponent Selection Panel
   m_TagString: Untagged
@@ -7075,11 +7103,23 @@ RectTransform:
   - {fileID: 1781496612}
   m_Father: {fileID: 943410434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -50, y: 0}
   m_SizeDelta: {x: 700, y: 980}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!225 &2011996777
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011996775}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!4 &2024688248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1447223516640335480, guid: 93ac402dcb053ea47abb534678e5408e, type: 3}

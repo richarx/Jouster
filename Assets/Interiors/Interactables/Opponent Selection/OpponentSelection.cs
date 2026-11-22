@@ -1,14 +1,23 @@
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OpponentSelection : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera camera;
     [SerializeField] private SelectionShield selectionShieldPrefab;
 
+    public UnityEvent OnOpen = new UnityEvent();
+    public UnityEvent OnClose = new UnityEvent();
+
+    private List<SelectionShield> shields = new List<SelectionShield>();
+
     private IconTrigger iconTrigger;
 
     private bool isSelectionOpen;
+
+    public JoustDifficultyData CurrentSelection => shields[0].Data;
 
     private void Start()
     {
@@ -25,6 +34,7 @@ public class OpponentSelection : MonoBehaviour
         {
             SelectionShield selectionShield = Instantiate(selectionShieldPrefab, spawnPosition, Quaternion.identity, transform);
             selectionShield.Setup(data);
+            shields.Add(selectionShield);
 
             spawnPosition += Vector3.right * 1.5f;
         }
@@ -48,6 +58,7 @@ public class OpponentSelection : MonoBehaviour
 
         iconTrigger.HideIcon();
         camera.gameObject.SetActive(true);
+        OnOpen?.Invoke();
     }
 
     private void CloseOpponentSelection()
@@ -60,5 +71,6 @@ public class OpponentSelection : MonoBehaviour
         if (!JoustPreparation.instance.IsOpponentSelected)
             iconTrigger.DisplayIcon();
         camera.gameObject.SetActive(false);
+        OnClose?.Invoke();
     }
 }

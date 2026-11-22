@@ -16,9 +16,9 @@ MonoBehaviour:
   reactionTime: 1
   strategy: {fileID: 11400000, guid: 9613c896438ea384b9e05f5ed399cd56, type: 2}
   knightPrefab: {fileID: 8246442323451293514, guid: 653e035f9667bf34e95d63d35d2f9adc, type: 3}
-  knightName: 
-  knightTitle: 
-  horseName: 
-  skillLevel: 0
-  healthStatus: 0
+  knightName: George
+  knightTitle: Young Knight
+  horseName: Fast And Furious
+  skillLevel: 2
+  healthStatus: 1
   knightColor: {r: 0.11311853, g: 0.5849056, b: 0.24435554, a: 1}
