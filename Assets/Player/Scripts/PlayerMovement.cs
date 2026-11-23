@@ -1,5 +1,6 @@
 using BoomLib.Inputs;
 using BoomTools;
+using PrimeTween;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,8 +20,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveVelocity;
     private int lastLookDirection;
     public int LastLookDirection => lastLookDirection;
-    public bool isMoving => currentInputs.GetMove.magnitude > 0.05f;
     public bool isRunning => Tools.NormalizeValue(moveVelocity.magnitude, 0.0f, moveSpeed) >= normalizedRunThreshold;
+    private bool isMoving;
+    public bool IsMoving => isMoving;
+
+    private bool isLocked;
+    public bool IsLocked => isLocked;
+
+    private Sequence lockedMovementSequence;
 
     private void Awake()
     {
@@ -40,11 +47,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (currentInputs == null)
+        if (currentInputs == null || isLocked)
             return;
 
         Vector2 moveInput = currentInputs.GetMove;
         Vector2 move = moveInput.normalized * moveSpeed;
+
+        isMoving = moveInput.magnitude > 0.15f;
 
         if (isMoving)
         {
@@ -67,5 +76,32 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.position = spawnPosition;
         transform.position = spawnPosition.ToVector3();
+    }
+
+    public void SetLockState(bool state, Vector3 moveToPosition, Vector2 idleLookDirection)
+    {
+        SetLockState(state);
+
+        if (lockedMovementSequence.isAlive)
+            lockedMovementSequence.Stop();
+
+        Vector3 lookDirection = (moveToPosition - transform.position).normalized;
+        lastLookDirection = Tools.GetCardinalDirection(lookDirection);
+        rb.linearVelocity = Vector2.zero;
+
+        lockedMovementSequence = Sequence.Create(updateType: UpdateType.FixedUpdate)
+            .Chain(Tween.RigidbodyMovePosition(rb, moveToPosition, 1.5f))
+            .ChainCallback(() => lastLookDirection = Tools.GetCardinalDirection(idleLookDirection));
+    }
+
+    public void SetLockState(bool state, Vector2 idleLookDirection)
+    {
+        lastLookDirection = Tools.GetCardinalDirection(idleLookDirection);
+        SetLockState(state);
+    }
+
+    public void SetLockState(bool state)
+    {
+        isLocked = state;
     }
 }

@@ -33,6 +33,7 @@ public class DisplayOpponent : MonoBehaviour
 
         opponentSelection.OnOpen.AddListener(() => DisplayPanel(opponentSelection.CurrentSelection));
         opponentSelection.OnClose.AddListener(HidePanel);
+        opponentSelection.OnSelectShield.AddListener(() => DisplayPanel(opponentSelection.CurrentSelection));
     }
 
     public void DisplayPanel(JoustDifficultyData data)

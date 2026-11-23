@@ -24,7 +24,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         if (canRun && playerMovement.isRunning)
             return "Run";
-        if (playerMovement.isMoving)
+        if (playerMovement.IsMoving)
             return "Walk";
         return "Idle";
     }

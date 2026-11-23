@@ -1,23 +1,39 @@
+using System;
 using System.Collections.Generic;
+using BoomLib.Inputs;
+using BoomTools;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class OpponentSelection : MonoBehaviour
 {
-    [SerializeField] private CinemachineCamera camera;
     [SerializeField] private SelectionShield selectionShieldPrefab;
+    [SerializeField] private Vector2 offsetPlayerPosition;
 
     public UnityEvent OnOpen = new UnityEvent();
     public UnityEvent OnClose = new UnityEvent();
+    public UnityEvent OnSelectShield = new UnityEvent();
+    public UnityEvent OnValidateShield = new UnityEvent();
 
+    private int currentShieldIndex;
+    private int currentValidatedIndex = -1;
+    public int CurrentValidatedIndex => currentValidatedIndex;
+    public bool hasValidatedSelection => currentValidatedIndex >= 0;
     private List<SelectionShield> shields = new List<SelectionShield>();
+    public JoustDifficultyData CurrentSelection => shields[currentShieldIndex].Data;
+    public JoustDifficultyData CurrentValidation => hasValidatedSelection ? shields[currentValidatedIndex].Data : null;
+    public Vector3 CurrentSelectionPosition => shields[currentShieldIndex].transform.position;
+
+    private Vector3 playerTargetPosition => new Vector3(transform.position.x + offsetPlayerPosition.x, transform.position.y + offsetPlayerPosition.y, transform.position.z);
 
     private IconTrigger iconTrigger;
 
     private bool isSelectionOpen;
 
-    public JoustDifficultyData CurrentSelection => shields[0].Data;
+    private bool hasMoveInputReset = true;
+    private bool hasInteractInputReset = true;
+
 
     private void Start()
     {
@@ -33,11 +49,35 @@ public class OpponentSelection : MonoBehaviour
         foreach (JoustDifficultyData data in JoustPreparation.instance.JoustDifficultyDatas)
         {
             SelectionShield selectionShield = Instantiate(selectionShieldPrefab, spawnPosition, Quaternion.identity, transform);
-            selectionShield.Setup(data);
+            selectionShield.Setup(this, data, shields.Count);
+            selectionShield.OnClickShield.AddListener(SelectShield);
             shields.Add(selectionShield);
 
             spawnPosition += Vector3.right * 1.5f;
         }
+    }
+
+    private void SelectShield(int index)
+    {
+        if (!isSelectionOpen)
+            return;
+
+        index = Math.Clamp(index, 0, shields.Count - 1);
+
+        if (index == currentShieldIndex)
+            return;
+
+        currentShieldIndex = index;
+        OnSelectShield?.Invoke();
+    }
+
+    private void ValidateShield()
+    {
+        if (currentValidatedIndex == currentShieldIndex)
+            return;
+
+        currentValidatedIndex = currentShieldIndex;
+        OnValidateShield?.Invoke();
     }
 
     private void Update()
@@ -45,8 +85,36 @@ public class OpponentSelection : MonoBehaviour
         if (!isSelectionOpen)
             return;
 
-        if (PlayerMovement.instance.CurrentInputs.GetQuitInteraction.wasPressedThisFrame)
+        InputPackage inputPackage = PlayerMovement.instance.CurrentInputs;
+
+        if (inputPackage.GetQuitInteraction.wasPressedThisFrame)
+        {
             CloseOpponentSelection();
+            return;
+        }
+
+        if (inputPackage.GetInteract.wasPressedThisFrame)
+        {
+            if (hasInteractInputReset)
+            {
+                ValidateShield();
+                hasInteractInputReset = false;
+                return;
+            }
+        }
+        else
+            hasInteractInputReset = true;
+
+        if (inputPackage.GetMove.magnitude >= 0.15f)
+        {
+            if (hasMoveInputReset)
+            {
+                SelectShield(currentShieldIndex + Math.Sign(PlayerMovement.instance.CurrentInputs.GetMove.x));
+                hasMoveInputReset = false;
+            }
+        }
+        else
+            hasMoveInputReset = true;
     }
 
     private void OpenOpponentSelection()
@@ -54,11 +122,18 @@ public class OpponentSelection : MonoBehaviour
         if (isSelectionOpen)
             return;
 
+        if (hasValidatedSelection)
+            currentShieldIndex = currentValidatedIndex;
+        else
+            currentShieldIndex = 0;
         isSelectionOpen = true;
+        hasInteractInputReset = false;
+
+        PlayerMovement.instance.SetLockState(true, playerTargetPosition, Vector2.up);
 
         iconTrigger.HideIcon();
-        camera.gameObject.SetActive(true);
         OnOpen?.Invoke();
+        OnSelectShield?.Invoke();
     }
 
     private void CloseOpponentSelection()
@@ -67,10 +142,9 @@ public class OpponentSelection : MonoBehaviour
             return;
 
         isSelectionOpen = false;
+        PlayerMovement.instance.SetLockState(false);
 
-        if (!JoustPreparation.instance.IsOpponentSelected)
-            iconTrigger.DisplayIcon();
-        camera.gameObject.SetActive(false);
+        iconTrigger.DisplayIcon();
         OnClose?.Invoke();
     }
 }
