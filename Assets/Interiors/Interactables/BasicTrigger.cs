@@ -8,12 +8,17 @@ public class BasicTrigger : MonoBehaviour
 
     protected bool isPlayerInRange;
 
+    protected bool isActive = true;
+    public bool IsActive => isActive;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             isPlayerInRange = true;
-            OnPlayerEnterTrigger?.Invoke();
+
+            if (isActive)
+                OnPlayerEnterTrigger?.Invoke();
         }
     }
 
@@ -22,7 +27,20 @@ public class BasicTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInRange = false;
-            OnPlayerExitTrigger?.Invoke();
+
+            if (isActive)
+                OnPlayerExitTrigger?.Invoke();
         }
+    }
+
+    public void SetActiveState(bool state)
+    {
+        if (state == isActive)
+            return;
+
+        isActive = state;
+
+        if (isActive && isPlayerInRange)
+            OnPlayerEnterTrigger?.Invoke();
     }
 }

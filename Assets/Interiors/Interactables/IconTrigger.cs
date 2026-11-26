@@ -23,6 +23,9 @@ public class IconTrigger : BasicTrigger
 
     public void DisplayIcon()
     {
+        if (!isActive)
+            return;
+
         interactIcon.DisplayIcon();
         UpdateIconType(PlayerMovement.instance.CurrentInputs.lastInputType);
     }
@@ -34,6 +37,9 @@ public class IconTrigger : BasicTrigger
 
     private void Update()
     {
+        if (!isActive)
+            return;
+
         if (isPlayerInRange && PlayerMovement.instance.CurrentInputs.GetInteract.wasPressedThisFrame)
         {
             OnTrigger?.Invoke();

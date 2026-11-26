@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 328548071}
   - component: {fileID: 328548072}
   - component: {fileID: 328548073}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OpponentSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}

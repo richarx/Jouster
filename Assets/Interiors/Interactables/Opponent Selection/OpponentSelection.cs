@@ -76,6 +76,9 @@ public class OpponentSelection : MonoBehaviour
         if (currentValidatedIndex == currentShieldIndex)
             return;
 
+        if (!JoustPreparation.instance.IsRegistered)
+            return;
+
         currentValidatedIndex = currentShieldIndex;
         OnValidateShield?.Invoke();
     }

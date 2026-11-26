@@ -16,6 +16,9 @@ public class DialogueTrigger : IconTrigger
 
     private void StartDialogue()
     {
+        if (!isActive)
+            return;
+
         DialogueManager.instance.StartDialogue(dialogueGraph, EndDialogueCallback, EventCallback);
         interactIcon.HideIcon();
     }

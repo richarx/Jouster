@@ -39,6 +39,8 @@ public class DialogueManager : MonoBehaviour
         onDialogueEnd = endDialogueCallback;
         onDialogueEvent = dialogueEventCallback;
 
+        PlayerMovement.instance.SetLockState(true);
+
         foreach (RuntimeDialogueNode node in dialogueGraph.AllNodes)
         {
             nodeLookup[node.NodeID] = node;
@@ -166,6 +168,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         currentNode = null;
+
+        PlayerMovement.instance.SetLockState(false);
 
         CleanPreviousButtons();
 

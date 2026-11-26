@@ -102,6 +102,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetLockState(bool state)
     {
+        if (!state && lockedMovementSequence.isAlive)
+            lockedMovementSequence.Stop();
+
         isLocked = state;
     }
 }
