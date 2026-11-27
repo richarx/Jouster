@@ -14,24 +14,35 @@ public class SelectionShield : MonoBehaviour
     private JoustDifficultyData data;
     public JoustDifficultyData Data => data;
 
-    private int index;
-    public int Index => index;
+    public int index { get; private set; }
+    public bool isInterractable { get; private set; }
 
-    public void Setup(OpponentSelection parent, JoustDifficultyData joustDifficultyData, int shieldIndex)
+    public void Setup(OpponentSelection parent, JoustDifficultyData joustDifficultyData, int shieldIndex, bool isShieldInterractable)
     {
         opponentSelection = parent;
         data = joustDifficultyData;
         index = shieldIndex;
+        isInterractable = isShieldInterractable;
 
         interiorSprite.color = data.EnemyData.knightColor;
 
-        opponentSelection.OnValidateShield.AddListener(UpdateValidationVisual);
+        opponentSelection.OnValidateShield.AddListener(() => UpdateValidationVisual(true));
+        opponentSelection.OnOpen.AddListener(() => UpdateValidationVisual(true));
+        opponentSelection.OnClose.AddListener(() => UpdateValidationVisual(false));
     }
 
-    private void UpdateValidationVisual()
+    private void UpdateValidationVisual(bool isSelectionOpen)
     {
-        darkSprite.gameObject.SetActive(opponentSelection.hasValidatedSelection && opponentSelection.CurrentValidatedIndex != index);
-        selectedSprite.gameObject.SetActive(opponentSelection.hasValidatedSelection && opponentSelection.CurrentValidatedIndex == index);
+        if (isSelectionOpen)
+        {
+            darkSprite.gameObject.SetActive(!isInterractable || (opponentSelection.hasValidatedSelection && opponentSelection.CurrentValidatedIndex != index));
+            selectedSprite.gameObject.SetActive(isInterractable && opponentSelection.hasValidatedSelection && opponentSelection.CurrentValidatedIndex == index);
+        }
+        else
+        {
+            darkSprite.gameObject.SetActive(false);
+            selectedSprite.gameObject.SetActive(isInterractable && opponentSelection.hasValidatedSelection && opponentSelection.CurrentValidatedIndex == index);
+        }
     }
 
     public void OnMouseDown()

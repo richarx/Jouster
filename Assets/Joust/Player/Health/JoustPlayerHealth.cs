@@ -37,6 +37,9 @@ public class JoustPlayerHealth : MonoBehaviour
 
     public bool CanTakeDamage(Obstacle obstacle, int lane)
     {
+        if (IsInvincible)
+            return false;
+
         if (joustPlayer.CurrentLaneIndex == lane)
         {
             if (joustPlayer.currentState.GetStateType() == IJoustPlayerState.StateType.Jump)
@@ -53,9 +56,6 @@ public class JoustPlayerHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (IsInvincible)
-            return;
-
         if (IsArmored)
         {
             currentArmor -= 1;

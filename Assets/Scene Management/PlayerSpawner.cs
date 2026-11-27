@@ -28,8 +28,6 @@ public class PlayerSpawner : MonoBehaviour
         GameObject player = Instantiate(ComputePlayerPrefab(), position, Quaternion.identity);
 
         cinemachineCamera.Target.TrackingTarget = player.transform;
-
-        Debug.Log($"Position : {position}");
     }
 
     private GameObject ComputePlayerPrefab()

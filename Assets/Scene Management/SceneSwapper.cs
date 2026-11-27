@@ -1,12 +1,13 @@
-using System;
 using System.Collections;
-using BoomTools;
 using Map;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SceneSwapper : MonoBehaviour
 {
+    public UnityEvent<Cities, Target> OnSwapScene = new UnityEvent<Cities, Target>();
+
     public static SceneSwapper instance;
 
     private void Awake()
@@ -25,6 +26,7 @@ public class SceneSwapper : MonoBehaviour
 
         string targetScene = ComputeTargetScene(targetCity, targetEnvironment);
 
+        OnSwapScene?.Invoke(targetCity, targetEnvironment);
         yield return null;
         AsyncOperation operation = SceneManager.LoadSceneAsync(targetScene);
 

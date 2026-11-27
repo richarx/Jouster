@@ -1,40 +1,60 @@
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using PrimeTween;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class JoustPreparation : MonoBehaviour
 {
+    [SerializeField] private Map.Cities city;
     [SerializeField] private List<JoustDifficultyData> joustDifficultyDatas;
     [SerializeField] private Transform playerMoveTarget;
-    [SerializeField] private Image blackScreen;
 
     public UnityEvent OnRegisterPlayer = new UnityEvent();
     public UnityEvent OnSelectOpponent = new UnityEvent();
     public UnityEvent OnGoToStartJoust = new UnityEvent();
+    public UnityEvent OnGoBackInside = new UnityEvent();
 
     public static JoustPreparation instance;
 
-    public ReadOnlyCollection<JoustDifficultyData> JoustDifficultyDatas => joustDifficultyDatas.AsReadOnly();
+    public Dictionary<JoustDifficultyData, JoustManager.JoustResult> opponentsData { get; private set; }
 
     private bool isRegistered;
     public bool IsRegistered => isRegistered;
 
     private JoustDifficultyData currentOpponent;
+    public JoustDifficultyData CurrentOpponent => currentOpponent;
     public bool IsOpponentSelected => currentOpponent != null;
+    public Map.Cities targetCity => city;
 
     private Sequence startJoustSequence;
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        opponentsData = new Dictionary<JoustDifficultyData, JoustManager.JoustResult>();
+        foreach (JoustDifficultyData data in joustDifficultyDatas)
+        {
+            opponentsData.Add(data, JoustManager.JoustResult.None);
+        }
     }
 
     private void Start()
     {
-
+        SceneSwapper.instance.OnSwapScene.AddListener((city, target) =>
+        {
+            if (target == Map.Target.Exterior)
+            {
+                Destroy(gameObject);
+            }
+        });
     }
 
     public void RegisterPlayer()
@@ -60,8 +80,24 @@ public class JoustPreparation : MonoBehaviour
         PlayerMovement.instance.SetLockState(true, playerMoveTarget.position, Vector2.up, 9.0f);
 
         startJoustSequence = Sequence.Create()
-            .Chain(Tween.Alpha(blackScreen, 1.0f, 3.0f, Ease.OutCirc))
+            .Chain(Tween.Alpha(BlackScreen.instance.Image, 1.0f, 3.0f, Ease.OutCirc))
             .ChainCallback(() => OnGoToStartJoust?.Invoke())
-            .ChainCallback(() => SceneSwapper.instance.LoadScene(Map.Cities.Red, Map.Target.Joust));
+            .ChainCallback(() => SceneSwapper.instance.LoadScene(city, Map.Target.Joust))
+            .Chain(Tween.Alpha(BlackScreen.instance.Image, 0.0f, 0.3f, Ease.OutCirc));
+    }
+
+    public void ComeBackFromJoust(JoustManager.JoustResult result)
+    {
+        if (startJoustSequence.isAlive)
+            return;
+
+        opponentsData[currentOpponent] = result;
+        currentOpponent = null;
+
+        startJoustSequence = Sequence.Create()
+            .Chain(Tween.Alpha(BlackScreen.instance.Image, 1.0f, 3.0f, Ease.OutCirc))
+            .ChainCallback(() => OnGoBackInside?.Invoke())
+            .ChainCallback(() => SceneSwapper.instance.LoadScene(city, Map.Target.Interior))
+            .Chain(Tween.Alpha(BlackScreen.instance.Image, 0.0f, 0.3f, Ease.OutCirc));
     }
 }

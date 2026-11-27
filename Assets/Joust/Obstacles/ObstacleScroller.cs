@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObstacleScroller : MonoBehaviour
 {
+    public UnityEvent<bool> OnFinishScrollingKnight = new UnityEvent<bool>();
+
     [SerializeField] private JoustPlayerHealth playerHealth;
 
     [Space]
@@ -48,13 +51,14 @@ public class ObstacleScroller : MonoBehaviour
         int lane = obstacle.assignedLane;
 
         if (obstacle.chunkData.obstacleType == ObstacleType.Knight)
-        {
             lane = obstacle.objectTransform.GetComponent<JoustEnemyMovement>().CurrentLane;
-        }
 
-        if (playerHealth.CanTakeDamage(obstacle, lane))
-        {
+        bool canTakeDamage = playerHealth.CanTakeDamage(obstacle, lane);
+
+        if (canTakeDamage)
             playerHealth.TakeDamage();
-        }
+
+        if (obstacle.chunkData.obstacleType == ObstacleType.Knight)
+            OnFinishScrollingKnight?.Invoke(canTakeDamage);
     }
 }

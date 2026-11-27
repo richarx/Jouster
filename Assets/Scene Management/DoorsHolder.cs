@@ -17,7 +17,6 @@ public class DoorsHolder : MonoBehaviour
 
     public void RegisterNewDoor(DoorTrigger door)
     {
-        Debug.Log("Register new Door");
         doors.Add(door);
     }
 

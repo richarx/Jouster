@@ -46,10 +46,10 @@ public class OpponentSelection : MonoBehaviour
     private void SetupShields()
     {
         Vector3 spawnPosition = transform.position + new Vector3(0.0f, -0.6f, 0.0f);
-        foreach (JoustDifficultyData data in JoustPreparation.instance.JoustDifficultyDatas)
+        foreach (KeyValuePair<JoustDifficultyData, JoustManager.JoustResult> data in JoustPreparation.instance.opponentsData)
         {
             SelectionShield selectionShield = Instantiate(selectionShieldPrefab, spawnPosition, Quaternion.identity, transform);
-            selectionShield.Setup(this, data, shields.Count);
+            selectionShield.Setup(this, data.Key, shields.Count, data.Value == JoustManager.JoustResult.None);
             selectionShield.OnClickShield.AddListener(SelectShield);
             shields.Add(selectionShield);
 
@@ -77,6 +77,9 @@ public class OpponentSelection : MonoBehaviour
             return;
 
         if (!JoustPreparation.instance.IsRegistered)
+            return;
+
+        if (!shields[currentShieldIndex].isInterractable)
             return;
 
         currentValidatedIndex = currentShieldIndex;
@@ -126,10 +129,7 @@ public class OpponentSelection : MonoBehaviour
         if (isSelectionOpen)
             return;
 
-        if (hasValidatedSelection)
-            currentShieldIndex = currentValidatedIndex;
-        else
-            currentShieldIndex = 0;
+        currentShieldIndex = ComputeStartingSelectionIndex();
         isSelectionOpen = true;
         hasInteractInputReset = false;
 
@@ -138,6 +138,20 @@ public class OpponentSelection : MonoBehaviour
         iconTrigger.HideIcon();
         OnOpen?.Invoke();
         OnSelectShield?.Invoke();
+    }
+
+    private int ComputeStartingSelectionIndex()
+    {
+        if (hasValidatedSelection)
+            return currentValidatedIndex;
+
+        for (int i = 0; i < shields.Count; i++)
+        {
+            if (shields[i].isInterractable)
+                return i;
+        }
+
+        return 0;
     }
 
     private void CloseOpponentSelection()
