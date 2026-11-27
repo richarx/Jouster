@@ -25,6 +25,7 @@ public class SceneSwapper : MonoBehaviour
 
         string targetScene = ComputeTargetScene(targetCity, targetEnvironment);
 
+        yield return null;
         AsyncOperation operation = SceneManager.LoadSceneAsync(targetScene);
 
         yield return new WaitUntil(() => operation.isDone);

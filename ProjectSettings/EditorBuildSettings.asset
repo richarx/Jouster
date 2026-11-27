@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Red_Interior.unity
     guid: 0fd81a448f0df644da8344a3b4c61e76
+  - enabled: 1
+    path: Assets/Scenes/Joust.unity
+    guid: be7b63263c6249340b39ba6cd6c9b22a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

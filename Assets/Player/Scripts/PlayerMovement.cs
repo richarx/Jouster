@@ -38,6 +38,13 @@ public class PlayerMovement : MonoBehaviour
     {
         imputPacker = new InputPacker();
         rb = GetComponent<Rigidbody2D>();
+
+        if (JoustPreparation.instance != null)
+            JoustPreparation.instance.OnGoToStartJoust.AddListener(() =>
+            {
+                if (lockedMovementSequence.isAlive)
+                    lockedMovementSequence.Stop();
+            });
     }
 
     private void Update()
@@ -78,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = spawnPosition.ToVector3();
     }
 
-    public void SetLockState(bool state, Vector3 moveToPosition, Vector2 idleLookDirection)
+    public void SetLockState(bool state, Vector3 moveToPosition, Vector2 idleLookDirection, float moveDuration = 1.5f)
     {
         SetLockState(state);
 
@@ -90,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
 
         lockedMovementSequence = Sequence.Create(updateType: UpdateType.FixedUpdate)
-            .Chain(Tween.RigidbodyMovePosition(rb, moveToPosition, 1.5f))
+            .Chain(Tween.RigidbodyMovePosition(rb, moveToPosition, moveDuration))
             .ChainCallback(() => lastLookDirection = Tools.GetCardinalDirection(idleLookDirection));
     }
 
