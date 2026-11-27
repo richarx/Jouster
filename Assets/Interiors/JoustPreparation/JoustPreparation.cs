@@ -9,6 +9,7 @@ public class JoustPreparation : MonoBehaviour
 
     public UnityEvent OnRegisterPlayer = new UnityEvent();
     public UnityEvent OnSelectOpponent = new UnityEvent();
+    public UnityEvent OnGoToStartJoust = new UnityEvent();
 
     public static JoustPreparation instance;
 
@@ -37,5 +38,18 @@ public class JoustPreparation : MonoBehaviour
 
         isRegistered = true;
         OnRegisterPlayer?.Invoke();
+    }
+
+    public void ValidateOpponent(JoustDifficultyData opponent)
+    {
+        currentOpponent = opponent;
+        OnSelectOpponent?.Invoke();
+    }
+
+    public void StartJoust()
+    {
+        OnGoToStartJoust?.Invoke();
+        SceneSwapper.instance.LoadScene(Map.Cities.Red, Map.Target.Joust);
+        Debug.Log("Trigger Joust");
     }
 }

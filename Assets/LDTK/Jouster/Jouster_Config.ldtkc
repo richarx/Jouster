@@ -69,7 +69,9 @@
         {
             "_key": "Joust_Trigger",
             "_asset": {
-                "instanceID": 0
+                "fileID": 3644499573118187815,
+                "guid": "7dfd6ddffb9685f4f8c61ce640e108bf",
+                "type": 3
             }
         },
         {
@@ -87,7 +89,9 @@
         {
             "_key": "Gate",
             "_asset": {
-                "instanceID": 0
+                "fileID": 4294810425183200211,
+                "guid": "8aca18d13143e0a42bb2cd1ed520efc7",
+                "type": 3
             }
         },
         {

@@ -81,6 +81,7 @@ public class OpponentSelection : MonoBehaviour
 
         currentValidatedIndex = currentShieldIndex;
         OnValidateShield?.Invoke();
+        JoustPreparation.instance.ValidateOpponent(shields[currentValidatedIndex].Data);
     }
 
     private void Update()

@@ -11,7 +11,7 @@ public class IconTrigger : BasicTrigger
 
     protected InteractIcon interactIcon;
 
-    protected virtual void Start()
+    protected override void Start()
     {
         OnPlayerEnterTrigger.AddListener(DisplayIcon);
         OnPlayerExitTrigger.AddListener(HideIcon);

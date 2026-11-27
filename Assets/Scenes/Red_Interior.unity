@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbcf49927b07964294dce1323edd6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IconTrigger
+  resizeHitboxOnSpawn: 0
   OnPlayerEnterTrigger:
     m_PersistentCalls:
       m_Calls: []
@@ -3925,6 +3926,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -224030184156155388, guid: 42075c30e2e25044ebc31df9f1243885, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -224030184156155388, guid: 42075c30e2e25044ebc31df9f1243885, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 821700720458326281, guid: 42075c30e2e25044ebc31df9f1243885, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
@@ -5983,6 +5992,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnSelectOpponent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGoToStartJoust:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1355832596

@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class BasicTrigger : MonoBehaviour
 {
+    [SerializeField] private bool resizeHitboxOnSpawn;
+
     public UnityEvent OnPlayerEnterTrigger = new UnityEvent();
     public UnityEvent OnPlayerExitTrigger = new UnityEvent();
 
@@ -10,6 +12,20 @@ public class BasicTrigger : MonoBehaviour
 
     protected bool isActive = true;
     public bool IsActive => isActive;
+
+    protected virtual void Start()
+    {
+        if (resizeHitboxOnSpawn)
+            ResizeCollider();
+    }
+
+    [ContextMenu("ResizeCollider")]
+    public void ResizeCollider()
+    {
+        Vector3 scale = transform.localScale;
+        BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        collider.offset = new Vector2(0.5f, -0.5f);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

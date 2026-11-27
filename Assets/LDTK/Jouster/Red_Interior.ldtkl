@@ -83,7 +83,7 @@
 				},
 				{
 					"__identifier": "Spawn",
-					"__grid": [31,33],
+					"__grid": [31,34],
 					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
@@ -92,10 +92,10 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 61,
-					"px": [504,536],
+					"px": [504,552],
 					"fieldInstances": [],
 					"__worldX": -408,
-					"__worldY": 344
+					"__worldY": 360
 				},
 				{
 					"__identifier": "JoustSelectionShield",

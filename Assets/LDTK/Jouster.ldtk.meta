@@ -38,13 +38,13 @@ ScriptedImporter:
   - _key: Door
     _asset: {fileID: 2955047604777379071, guid: cb7824a07669e0d4f853e6f714ad09d3, type: 3}
   - _key: Joust_Trigger
-    _asset: {instanceID: 0}
+    _asset: {fileID: 3644499573118187815, guid: 7dfd6ddffb9685f4f8c61ce640e108bf, type: 3}
   - _key: Doctor_Trigger
     _asset: {instanceID: 0}
   - _key: JoustSelectionShield
     _asset: {instanceID: 0}
   - _key: Gate
-    _asset: {instanceID: 0}
+    _asset: {fileID: 4294810425183200211, guid: 8aca18d13143e0a42bb2cd1ed520efc7, type: 3}
   - _key: Joust_Inscription
     _asset: {fileID: 2971667040836428230, guid: b6438d82a4744da4680ba71e5c987650, type: 3}
   _enumGenerate: 1

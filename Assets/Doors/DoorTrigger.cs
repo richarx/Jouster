@@ -42,9 +42,6 @@ public class DoorTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            Debug.Log($"Trigger : {targetCity}");
             SceneSwapper.instance.LoadScene(targetCity, targetEnvironment);
-        }
     }
 }
